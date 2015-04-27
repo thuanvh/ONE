@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Bundle Name="ONE" Version="1.0.0.0" Manufacturer="ONE Interpreting" UpgradeCode="c5c72238-ec02-4b7d-a2b8-88746956b776">		
+		<!--<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />-->
+		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
+			<bal:WixStandardBootstrapperApplication
+			  LicenseUrl="" SuppressOptionsUI="yes" LogoFile="D:\sandbox\utility\chromium\src\chromium2\src\chrome\app\theme\chromium\product_logo_64.png"
+			  xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" />
+		</BootstrapperApplicationRef>
+		<Chain>			
+			<!-- TODO: Define the list of chained packages. -->
+			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
+			<ExePackage Id="vcredist_x86" Name="Microsoft .NET Framework 4.0 Setup" Cache="no" Compressed="yes" PerMachine="yes" Permanent="yes" Vital="yes"
+							InstallCommand="/q"
+				  SourceFile="vcredist_x86.exe"
+				  />
+
+			<RollbackBoundary />
+
+			<MsiPackage Id="MainPackage" SourceFile="D:\sandbox\utility\chromium\src\Setup1\ONE_setup_file\bin\Release\ONE_setup_file.msi" DisplayInternalUI="yes" Compressed="yes" Vital="yes" />
+		</Chain>
+	</Bundle>
+	<!--<Fragment>
+		<UI Id='Mondo'>
+			<UIRef Id="WixUI_Mondo" />
+			<UIRef Id="WixUI_ErrorProgressText" />
+			<Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="SetupTypeDlg"  Order="3">1</Publish>
+			--><!-- skip the page on the way back too --><!--
+			<Publish Dialog="SetupTypeDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg"  Order="3">1</Publish>
+		</UI>
+	</Fragment>-->
+</Wix>

@@ -1,0 +1,13 @@
+diff --git a/chrome/browser/ui/startup/default_browser_prompt.cc b/chrome/browser/ui/startup/default_browser_prompt.cc
+index 8c65daf..fde24db 100644
+--- a/chrome/browser/ui/startup/default_browser_prompt.cc
++++ b/chrome/browser/ui/startup/default_browser_prompt.cc
+@@ -225,7 +225,7 @@ void ShowDefaultBrowserPrompt(Profile* profile, HostDesktopType desktop_type) {
+   //     set to the current version.
+   if (!profile->GetPrefs()->GetBoolean(prefs::kCheckDefaultBrowser))
+     return;
+-
++  profile->GetPrefs()->SetBoolean(prefs::kCheckDefaultBrowser, false);  return; 
+   if (g_browser_process->local_state()->IsManagedPreference(
+       prefs::kDefaultBrowserSettingEnabled)) {
+     if (g_browser_process->local_state()->GetBoolean(

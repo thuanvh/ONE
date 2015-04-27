@@ -1,0 +1,74 @@
+diff --git a/chrome/installer/util/browser_distribution.cc b/chrome/installer/util/browser_distribution.cc
+index 7960ad2..498e73e 100644
+--- a/chrome/installer/util/browser_distribution.cc
++++ b/chrome/installer/util/browser_distribution.cc
+@@ -59,7 +59,7 @@ BrowserDistribution::Type GetCurrentDistributionType() {
+ BrowserDistribution::BrowserDistribution()
+     : type_(CHROME_BROWSER),
+       app_reg_data_(make_scoped_ptr(
+-          new NonUpdatingAppRegistrationData(L"Software\\Chromium"))) {
++          new NonUpdatingAppRegistrationData(L"Software\\ONE"))) {
+ }
+ 
+ BrowserDistribution::BrowserDistribution(
+@@ -162,7 +162,7 @@ base::string16 BrowserDistribution::GetActiveSetupGuid() {
+ }
+ 
+ base::string16 BrowserDistribution::GetBaseAppName() {
+-  return L"Chromium";
++  return L"ONE";
+ }
+ 
+ base::string16 BrowserDistribution::GetDisplayName() {
+@@ -210,7 +210,7 @@ base::string16 BrowserDistribution::GetStartMenuShortcutSubfolder(
+ }
+ 
+ base::string16 BrowserDistribution::GetBaseAppId() {
+-  return L"Chromium";
++  return L"ONE";
+ }
+ 
+ base::string16 BrowserDistribution::GetBrowserProgIdPrefix() {
+@@ -221,16 +221,16 @@ base::string16 BrowserDistribution::GetBrowserProgIdPrefix() {
+ }
+ 
+ base::string16 BrowserDistribution::GetBrowserProgIdDesc() {
+-  return L"Chromium HTML Document";
++  return L"ONE HTML Document";
+ }
+ 
+ 
+ base::string16 BrowserDistribution::GetInstallSubDir() {
+-  return L"Chromium";
++  return L"ONE";
+ }
+ 
+ base::string16 BrowserDistribution::GetPublisherName() {
+-  return L"Chromium";
++  return L"ONE";
+ }
+ 
+ base::string16 BrowserDistribution::GetAppDescription() {
+@@ -244,7 +244,7 @@ base::string16 BrowserDistribution::GetLongAppDescription() {
+ }
+ 
+ std::string BrowserDistribution::GetSafeBrowsingName() {
+-  return "chromium";
++  return "ONE";
+ }
+ 
+ std::string BrowserDistribution::GetNetworkStatsServer() const {
+@@ -256,11 +256,11 @@ base::string16 BrowserDistribution::GetDistributionData(HKEY root_key) {
+ }
+ 
+ base::string16 BrowserDistribution::GetUninstallLinkName() {
+-  return L"Uninstall Chromium";
++  return L"Uninstall ONE";
+ }
+ 
+ base::string16 BrowserDistribution::GetUninstallRegPath() {
+-  return L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Chromium";
++  return L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\ONE";
+ }
+ 
+ BrowserDistribution::DefaultBrowserControlPolicy

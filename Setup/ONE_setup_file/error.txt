@@ -1,0 +1,117 @@
+ninja: Entering directory `out/Release'
+[1/13] RULE Create installer archive
+FAILED: d:\sandbox\utility\chromium\depot\depot_tools\python276_bin\python.exe gyp-win-tool action-wrapper environment.x86 mini_installer_target_installer_archive_01f927ad4924c9ff5500cc7b9db92181.afe6efa8cc4fdc3132649e9a020a71ca.rsp ..\..\chrome\installer
+
+7-Zip (A) 4.42  Copyright (c) 1999-2006 Igor Pavlov  2006-05-14
+Scanning
+
+Creating archive ..\..\out\Release\chrome.7z
+
+Compressing  Chrome-bin\39.0.2171.71\icudtl.dat
+Compressing  Chrome-bin\39.0.2171.71\chrome.dll
+Compressing  Chrome-bin\39.0.2171.71\chrome_child.dll
+Compressing  Chrome-bin\39.0.2171.71\chrome_elf.dll
+Compressing  Chrome-bin\39.0.2171.71\d3dcompiler_46.dll
+Compressing  Chrome-bin\39.0.2171.71\ffmpegsumo.dll
+Compressing  Chrome-bin\39.0.2171.71\libegl.dll
+Compressing  Chrome-bin\39.0.2171.71\libexif.dll
+Compressing  Chrome-bin\39.0.2171.71\libglesv2.dll
+Compressing  Chrome-bin\39.0.2171.71\metro_driver.dll
+Compressing  Chrome-bin\39.0.2171.71\pdf.dll
+Compressing  Chrome-bin\chrome.exe
+Compressing  Chrome-bin\39.0.2171.71\delegate_execute.exe
+Compressing  Chrome-bin\39.0.2171.71\nacl64.exe
+Compressing  Chrome-bin\wow_helper.exe
+Compressing  Chrome-bin\39.0.2171.71\Extensions\external_extensions.json
+Compressing  Chrome-bin\39.0.2171.71\39.0.2171.71.manifest
+Compressing  Chrome-bin\39.0.2171.71\nacl_irt_x86_32.nexe
+Compressing  Chrome-bin\39.0.2171.71\nacl_irt_x86_64.nexe
+Compressing  Chrome-bin\39.0.2171.71\Locales\am.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\ar.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\bg.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\bn.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\ca.pak
+Compressing  Chrome-bin\39.0.2171.71\chrome_100_percent.pak
+Compressing  Chrome-bin\39.0.2171.71\chrome_200_percent.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\cs.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\da.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\de.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\el.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\en-GB.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\en-US.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\es-419.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\es.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\et.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\fa.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\fi.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\fil.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\fr.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\gu.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\he.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\hi.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\hr.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\hu.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\id.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\it.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\ja.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\kn.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\ko.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\lt.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\lv.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\ml.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\mr.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\ms.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\nb.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\nl.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\pl.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\pt-BR.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\pt-PT.pak
+Compressing  Chrome-bin\39.0.2171.71\resources.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\ro.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\ru.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\sk.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\sl.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\sr.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\sv.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\sw.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\ta.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\te.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\th.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\tr.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\uk.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\vi.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\zh-CN.pak
+Compressing  Chrome-bin\39.0.2171.71\Locales\zh-TW.pak
+Compressing  Chrome-bin\39.0.2171.71\VisualElements\logo.png
+Compressing  Chrome-bin\39.0.2171.71\secondarytile.png
+Compressing  Chrome-bin\39.0.2171.71\VisualElements\smalllogo.png
+Compressing  Chrome-bin\39.0.2171.71\VisualElements\splash-620x300.png
+
+Everything is Ok
+
+7-Zip (A) 4.42  Copyright (c) 1999-2006 Igor Pavlov  2006-05-14
+Scanning
+
+Creating archive ..\..\out\Release\chrome.packed.7z
+
+Compressing  chrome.7z
+Error:
+
+
+ERROR: Can't allocate required memory!
+['../tools/build/win/create_installer_archive.py', '--build_dir', '..\\..\\out\\Release', '--staging_dir', '..\\..\\out\\Release\\obj\\chrome\\installer\\mini_installer.gen', '--input_file', 'mini_installer\\chrome.release', '--resource_file_path', '..\\..\\out\\Release\\obj\\chrome\\installer\\mini_installer.gen/packed_files.rc', '--enable_hidpi=1', '', '--target_arch=x86', '--distribution=_google_chrome']
+Running ['..\\..\\out\\Release\\..\\..\\third_party\\lzma_sdk\\Executable\\7za.exe', 'a', '-t7z', '..\\..\\out\\Release\\chrome.7z', '..\\..\\out\\Release\\obj\\chrome\\installer\\mini_installer.gen\\temp_installer_archive\\Chrome-bin', '-mx0']
+Running ['..\\..\\out\\Release\\..\\..\\third_party\\lzma_sdk\\Executable\\7za.exe', 'a', '-t7z', '-m0=BCJ2', '-m1=LZMA:d27:fb128', '-m2=LZMA:d22:fb128:mf=bt2', '-m3=LZMA:d22:fb128:mf=bt2', '-mb0:1', '-mb0s1:2', '-mb0s2:3', '..\\..\\out\\Release\\chrome.packed.7z', '..\\..\\out\\Release\\chrome.7z']
+Traceback (most recent call last):
+  File "../tools/build/win/create_installer_archive.py", line 606, in <module>
+    sys.exit(main(_ParseOptions()))
+  File "../tools/build/win/create_installer_archive.py", line 531, in main
+    current_build_number, prev_build_number)
+  File "../tools/build/win/create_installer_archive.py", line 239, in CreateArchiveFile
+    CompressUsingLZMA(options.build_dir, compressed_archive_file_path, orig_file)
+  File "../tools/build/win/create_installer_archive.py", line 89, in CompressUsingLZMA
+    RunSystemCommand(cmd)
+  File "../tools/build/win/create_installer_archive.py", line 188, in RunSystemCommand
+    (cmd, exit_code))
+Exception: Error while running cmd: ['..\\..\\out\\Release\\..\\..\\third_party\\lzma_sdk\\Executable\\7za.exe', 'a', '-t7z', '-m0=BCJ2', '-m1=LZMA:d27:fb128', '-m2=LZMA:d22:fb128:mf=bt2', '-m3=LZMA:d22:fb128:mf=bt2', '-mb0:1', '-mb0s1:2', '-mb0s2:3', '..\\..\\out\\Release\\chrome.packed.7z', '..\\..\\out\\Release\\chrome.7z'], exit_code: 8
+ninja: build stopped: subcommand failed.
