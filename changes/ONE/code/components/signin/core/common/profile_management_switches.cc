@@ -24,24 +24,28 @@ enum State {
 };
 
 State GetProcessState() {
+  // Disables the new avatar menu if the web-based signin is turned on, because
+  // the new avatar menu always uses the inline signin, which may break some
+  // SAML users.
+  if (switches::IsEnableWebBasedSignin())
+    return STATE_OLD_AVATAR_MENU;
+
   // Find the state of both command line args.
-  bool is_new_avatar_menu = true;
-      /*CommandLine::ForCurrentProcess()->HasSwitch(
-          switches::kEnableNewAvatarMenu);*/
+  bool is_new_avatar_menu = true;/*base::CommandLine::ForCurrentProcess()->HasSwitch(
+      switches::kEnableNewAvatarMenu);*/
   bool is_new_profile_management = true;
-      /*CommandLine::ForCurrentProcess()->HasSwitch(
+      /*base::CommandLine::ForCurrentProcess()->HasSwitch(
           switches::kEnableNewProfileManagement);*/
   bool is_consistent_identity = true;
-      /*CommandLine::ForCurrentProcess()->HasSwitch(
+      /*base::CommandLine::ForCurrentProcess()->HasSwitch(
           switches::kEnableAccountConsistency);*/
-  bool not_new_avatar_menu = false;
-      /*CommandLine::ForCurrentProcess()->HasSwitch(
-          switches::kDisableNewAvatarMenu);*/
-  bool not_new_profile_management = false;
-      /*CommandLine::ForCurrentProcess()->HasSwitch(
+  bool not_new_avatar_menu = false;/*base::CommandLine::ForCurrentProcess()->HasSwitch(
+      switches::kDisableNewAvatarMenu);*/
+  bool not_new_profile_management = false;/*
+      base::CommandLine::ForCurrentProcess()->HasSwitch(
           switches::kDisableNewProfileManagement);*/
-  bool not_consistent_identity = false;
-      /*CommandLine::ForCurrentProcess()->HasSwitch(
+  bool not_consistent_identity = false;/*
+      base::CommandLine::ForCurrentProcess()->HasSwitch(
           switches::kDisableAccountConsistency);*/
   int count_args = (is_new_avatar_menu ? 1 : 0) +
       (is_new_profile_management ? 1 : 0) +
@@ -110,7 +114,7 @@ State GetProcessState() {
 
 bool CheckFlag(std::string command_switch, State min_state) {
   // Individiual flag settings take precedence.
-  if (CommandLine::ForCurrentProcess()->HasSwitch(command_switch))
+  if (base::CommandLine::ForCurrentProcess()->HasSwitch(command_switch))
     return true;
 
   return GetProcessState() >= min_state;
@@ -125,8 +129,19 @@ bool IsEnableAccountConsistency() {
 }
 
 bool IsEnableWebBasedSignin() {
-  return CommandLine::ForCurrentProcess()->HasSwitch(
-      switches::kEnableWebBasedSignin) && !IsNewProfileManagement();
+  return base::CommandLine::ForCurrentProcess()->HasSwitch(
+             switches::kEnableWebBasedSignin) &&
+         !IsEnableWebviewBasedSignin();
+}
+
+bool IsEnableWebviewBasedSignin() {
+  // For now, the webview is enabled only for desktop.
+#if defined(OS_CHROMEOS)
+  return false;
+#else
+  return !base::CommandLine::ForCurrentProcess()->HasSwitch(
+      switches::kEnableIframeBasedSignin);
+#endif
 }
 
 bool IsExtensionsMultiAccount() {
@@ -135,7 +150,7 @@ bool IsExtensionsMultiAccount() {
 }
 
 bool IsFastUserSwitching() {
-  return CommandLine::ForCurrentProcess()->HasSwitch(
+  return base::CommandLine::ForCurrentProcess()->HasSwitch(
       switches::kFastUserSwitching);
 }
 

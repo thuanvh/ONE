@@ -1,0 +1,16 @@
+ chrome/browser/background/background_mode_manager.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/chrome/browser/background/background_mode_manager.cc b/chrome/browser/background/background_mode_manager.cc
+index 4e4a2e7..372531f 100644
+--- a/chrome/browser/background/background_mode_manager.cc
++++ b/chrome/browser/background/background_mode_manager.cc
+@@ -330,7 +330,7 @@ void BackgroundModeManager::RegisterPrefs(PrefRegistrySimple* registry) {
+   registry->RegisterBooleanPref(prefs::kChromeCreatedLoginItem, false);
+   registry->RegisterBooleanPref(prefs::kMigratedLoginItemPref, false);
+ #endif
+-  registry->RegisterBooleanPref(prefs::kBackgroundModeEnabled, true);
++  registry->RegisterBooleanPref(prefs::kBackgroundModeEnabled, false);
+ }
+ 
+ void BackgroundModeManager::RegisterProfile(Profile* profile) {

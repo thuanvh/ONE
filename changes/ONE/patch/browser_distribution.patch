@@ -1,8 +1,11 @@
+ chrome/installer/util/browser_distribution.cc | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
 diff --git a/chrome/installer/util/browser_distribution.cc b/chrome/installer/util/browser_distribution.cc
-index 7960ad2..498e73e 100644
+index dd7918d..74e427f 100644
 --- a/chrome/installer/util/browser_distribution.cc
 +++ b/chrome/installer/util/browser_distribution.cc
-@@ -59,7 +59,7 @@ BrowserDistribution::Type GetCurrentDistributionType() {
+@@ -54,7 +54,7 @@ BrowserDistribution::Type GetCurrentDistributionType() {
  BrowserDistribution::BrowserDistribution()
      : type_(CHROME_BROWSER),
        app_reg_data_(make_scoped_ptr(
@@ -11,7 +14,7 @@ index 7960ad2..498e73e 100644
  }
  
  BrowserDistribution::BrowserDistribution(
-@@ -162,7 +162,7 @@ base::string16 BrowserDistribution::GetActiveSetupGuid() {
+@@ -152,7 +152,7 @@ base::string16 BrowserDistribution::GetActiveSetupGuid() {
  }
  
  base::string16 BrowserDistribution::GetBaseAppName() {
@@ -20,7 +23,7 @@ index 7960ad2..498e73e 100644
  }
  
  base::string16 BrowserDistribution::GetDisplayName() {
-@@ -210,7 +210,7 @@ base::string16 BrowserDistribution::GetStartMenuShortcutSubfolder(
+@@ -200,7 +200,7 @@ base::string16 BrowserDistribution::GetStartMenuShortcutSubfolder(
  }
  
  base::string16 BrowserDistribution::GetBaseAppId() {
@@ -29,7 +32,7 @@ index 7960ad2..498e73e 100644
  }
  
  base::string16 BrowserDistribution::GetBrowserProgIdPrefix() {
-@@ -221,16 +221,16 @@ base::string16 BrowserDistribution::GetBrowserProgIdPrefix() {
+@@ -211,16 +211,16 @@ base::string16 BrowserDistribution::GetBrowserProgIdPrefix() {
  }
  
  base::string16 BrowserDistribution::GetBrowserProgIdDesc() {
@@ -49,7 +52,7 @@ index 7960ad2..498e73e 100644
  }
  
  base::string16 BrowserDistribution::GetAppDescription() {
-@@ -244,7 +244,7 @@ base::string16 BrowserDistribution::GetLongAppDescription() {
+@@ -234,7 +234,7 @@ base::string16 BrowserDistribution::GetLongAppDescription() {
  }
  
  std::string BrowserDistribution::GetSafeBrowsingName() {
@@ -58,7 +61,7 @@ index 7960ad2..498e73e 100644
  }
  
  std::string BrowserDistribution::GetNetworkStatsServer() const {
-@@ -256,11 +256,11 @@ base::string16 BrowserDistribution::GetDistributionData(HKEY root_key) {
+@@ -246,11 +246,11 @@ base::string16 BrowserDistribution::GetDistributionData(HKEY root_key) {
  }
  
  base::string16 BrowserDistribution::GetUninstallLinkName() {

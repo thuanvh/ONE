@@ -1,8 +1,11 @@
+ chrome/browser/ui/startup/default_browser_prompt.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 diff --git a/chrome/browser/ui/startup/default_browser_prompt.cc b/chrome/browser/ui/startup/default_browser_prompt.cc
-index 8c65daf..fde24db 100644
+index fcd0798..e0ac8d0 100644
 --- a/chrome/browser/ui/startup/default_browser_prompt.cc
 +++ b/chrome/browser/ui/startup/default_browser_prompt.cc
-@@ -225,7 +225,7 @@ void ShowDefaultBrowserPrompt(Profile* profile, HostDesktopType desktop_type) {
+@@ -224,7 +224,7 @@ void ShowDefaultBrowserPrompt(Profile* profile, HostDesktopType desktop_type) {
    //     set to the current version.
    if (!profile->GetPrefs()->GetBoolean(prefs::kCheckDefaultBrowser))
      return;

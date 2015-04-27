@@ -1,0 +1,18 @@
+ chrome/browser/profiles/profiles_state.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/chrome/browser/profiles/profiles_state.cc b/chrome/browser/profiles/profiles_state.cc
+index 48543c1..266b58f 100644
+--- a/chrome/browser/profiles/profiles_state.cc
++++ b/chrome/browser/profiles/profiles_state.cc
+@@ -48,8 +48,8 @@ void RegisterPrefs(PrefRegistrySimple* registry) {
+   registry->RegisterListPref(prefs::kProfilesLastActive);
+ 
+   // Preferences about the user manager.
+-  registry->RegisterBooleanPref(prefs::kBrowserGuestModeEnabled, true);
+-  registry->RegisterBooleanPref(prefs::kBrowserAddPersonEnabled, true);
++  registry->RegisterBooleanPref(prefs::kBrowserGuestModeEnabled, false);
++  registry->RegisterBooleanPref(prefs::kBrowserAddPersonEnabled, false);
+ }
+ 
+ base::string16 GetAvatarNameForProfile(const base::FilePath& profile_path) {

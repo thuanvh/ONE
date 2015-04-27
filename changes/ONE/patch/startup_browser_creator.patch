@@ -1,8 +1,11 @@
+ chrome/browser/ui/startup/startup_browser_creator.cc | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
 diff --git a/chrome/browser/ui/startup/startup_browser_creator.cc b/chrome/browser/ui/startup/startup_browser_creator.cc
-index 4d5cdce..f108ddc 100644
+index 751349e..5672410 100644
 --- a/chrome/browser/ui/startup/startup_browser_creator.cc
 +++ b/chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -42,6 +42,7 @@
+@@ -43,6 +43,7 @@
  #include "chrome/browser/profiles/profile_manager.h"
  #include "chrome/browser/profiles/profiles_state.h"
  #include "chrome/browser/search_engines/template_url_service_factory.h"
@@ -10,7 +13,7 @@ index 4d5cdce..f108ddc 100644
  #include "chrome/browser/ui/app_list/app_list_service.h"
  #include "chrome/browser/ui/browser.h"
  #include "chrome/browser/ui/browser_dialogs.h"
-@@ -392,6 +393,19 @@ SessionStartupPref StartupBrowserCreator::GetSessionStartupPref(
+@@ -410,6 +411,19 @@ SessionStartupPref StartupBrowserCreator::GetSessionStartupPref(
      pref.type = SessionStartupPref::DEFAULT;
    }
  
