@@ -4,7 +4,7 @@
 		<!--<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />-->
 		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
 			<bal:WixStandardBootstrapperApplication
-			  LicenseUrl="" SuppressOptionsUI="yes" LogoFile="D:\sandbox\utility\chromium\src\chromium2\src\chrome\app\theme\chromium\product_logo_64.png"
+			  LicenseUrl="" SuppressOptionsUI="yes" LogoFile="D:\sandbox\utility\chromium\src\branch_release\src\chrome\app\theme\chromium\product_logo_64.png"
 			  xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" />
 		</BootstrapperApplicationRef>
 		<Chain>			
@@ -17,7 +17,7 @@
 
 			<RollbackBoundary />
 
-			<MsiPackage Id="MainPackage" SourceFile="D:\sandbox\utility\chromium\src\Setup1\ONE_setup_file\bin\Release\ONE_setup_file.msi" DisplayInternalUI="yes" Compressed="yes" Vital="yes" />
+			<MsiPackage Id="MainPackage" SourceFile="D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi" DisplayInternalUI="yes" Compressed="yes" Vital="yes" />
 		</Chain>
 	</Bundle>
 	<!--<Fragment>

@@ -12,10 +12,13 @@
 			<ComponentGroupRef Id="ProductComponents" />
 			<ComponentGroupRef Id="LocalesComponents" />
 			<ComponentGroupRef Id="ExtensionsComponents" />
+      <ComponentGroupRef Id="PepperFlashComponents" />
 			<ComponentRef Id="locales_dir_component"/>
 			<ComponentRef Id="extensions_dir_component"/>
+      <ComponentRef Id="PepperFlash_dir_component"/>      
 			<ComponentRef Id="ApplicationShortcut" />
 			<ComponentRef Id="ApplicationShortcutDesktop"/>
+      <ComponentRef Id="LocalUserDataFolder_components"/>
 		</Feature>
 	</Product>
 
@@ -41,11 +44,19 @@
 							</CreateFolder>
 						</Component>
 					</Directory>
+          <Directory Id="PepperFlash_dir" Name="PepperFlash" >
+						<Component Id="PepperFlash_dir_component" Guid="{434CA7C1-44E0-433D-B63D-A59A3E5F34D4}"
+								SharedDllRefCount="no" KeyPath="no" NeverOverwrite="no" Permanent="no" Transitive="no"
+								Win64="no" Location="either">
+							<CreateFolder>
+								<util:PermissionEx User="Users" GenericAll="yes" />
+							</CreateFolder>
+						</Component>
+					</Directory>
 				</Directory>
 			</Directory>
 			<Directory Id="ProgramMenuFolder">
 				<Directory Id="ApplicationProgramsFolder" Name="ONE"/>
-
 			</Directory>
 			<Directory Id="DesktopFolder" Name="Desktop">
 				<!--<Component Id="ApplicationShortcutDesktop" Guid="{D724FD88-3FCB-4F54-A969-4D171A69480B}">
@@ -63,6 +74,10 @@
 					  KeyPath="yes"/>
 				</Component>-->
 			</Directory>
+      <Directory Id="LocalAppDataFolder">
+        <Directory Id="LocalUserDataFolder" Name="ONE">
+        </Directory>
+      </Directory>
 		</Directory>
 
 	</Fragment>
@@ -76,9 +91,10 @@
 			<Component Id="Main_Prog" Guid="{63E14B85-4EF7-4722-9E93-1E0CB82BE7C8}" KeyPath="yes">
 				<!--<File Id="Test.exe" Source="d:\sandbox\utility\chromium\src\install\Test.exe"  Checksum="yes">
 				</File>-->
-				<File Id="ONE.exe" Source="d:\sandbox\utility\chromium\src\install\chrome.exe" Checksum="yes"/>
+				<File Id="ONE.bat" Source="d:\sandbox\utility\chromium\src\install\ONE.bat" Checksum="yes"/>
 			</Component>
 			<Component Id="DependFiles" Guid="{732E7E6A-8AE0-494B-9501-35CC40C299B6}" KeyPath="yes">
+        <File Id="chrome.exe" Source="d:\sandbox\utility\chromium\src\install\chrome.exe" Checksum="yes"/>
 				<File Id="First_Run" Source="d:\sandbox\utility\chromium\src\install\First Run" />
 				<File Id="gyp_win_tool" Source="d:\sandbox\utility\chromium\src\install\gyp-win-tool" />
 				<File Id="nacl_irt_x86_32.nexe.cmd" Source="d:\sandbox\utility\chromium\src\install\nacl_irt_x86_32.nexe.cmd" />
@@ -116,7 +132,8 @@
 				<!--<File Id="debug.log" Source="d:\sandbox\utility\chromium\src\install\debug.log" />-->
 				<!--<File Id="_39.0.2171.71.manifest" Source="d:\sandbox\utility\chromium\src\install\39.0.2171.71.manifest" />
 				<File Id="_39.0.2171.90.manifest" Source="d:\sandbox\utility\chromium\src\install\39.0.2171.90.manifest" />-->
-        <File Id="_42.0.2311.90.manifest" Source="d:\sandbox\utility\chromium\src\install\42.0.2311.90.manifest" />
+        <!--<File Id="_42.0.2311.90.manifest" Source="d:\sandbox\utility\chromium\src\install\42.0.2311.90.manifest" />-->
+        <File Id="_42.0.2311.152.manifest" Source="d:\sandbox\utility\chromium\src\install\42.0.2311.152.manifest" />
 				<File Id="nacl_irt_x86_32.nexe" Source="d:\sandbox\utility\chromium\src\install\nacl_irt_x86_32.nexe" />
 				<File Id="nacl_irt_x86_64.nexe" Source="d:\sandbox\utility\chromium\src\install\nacl_irt_x86_64.nexe" />
 				<!--<File Id="build.ninja" Source="d:\sandbox\utility\chromium\src\install\build.ninja" />-->
@@ -192,13 +209,19 @@
 				<File Id="external_extensions.json" Source="d:\sandbox\utility\chromium\src\install\extensions\external_extensions.json"/>
 			</Component>
 		</ComponentGroup>
-		<Icon Id="app.ico" SourceFile="D:\sandbox\utility\chromium\src\chromium2\src\chrome\app\theme\chromium\chromium.ico" />    
+    <ComponentGroup Id="PepperFlashComponents" Directory="PepperFlash_dir">
+			<Component Id="PepperFlash_files" Guid="{DED7BCF0-A3CB-4F7E-9FEB-B59DE8A1152E}">
+				<File Id="manifest.json" Source="d:\sandbox\utility\chromium\src\install\PepperFlash\manifest.json"/>
+        <File Id="pepflashplayer.dll" Source="d:\sandbox\utility\chromium\src\install\PepperFlash\pepflashplayer.dll"/>
+			</Component>
+		</ComponentGroup>
+		<Icon Id="app.ico" SourceFile="D:\sandbox\utility\chromium\src\branch_release\src\chrome\app\theme\chromium\chromium.ico" />    
     <DirectoryRef Id="ApplicationProgramsFolder">
 			<Component Id="ApplicationShortcut" Guid="{5E63F11A-03F8-4C3C-8F0E-1B53172C4FB0}">
 				<Shortcut Id="ApplicationStartMenuShortcut"
 						  Name="ONE"
 						  Description="ONE"
-						  Target="[#ONE.exe]"
+						  Target="[#ONE.bat]"
 						  WorkingDirectory="INSTALLFOLDER" Icon="app.ico" />
 				<RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
 				<RegistryValue Root="HKCU" Key="Software\Microsoft\ONE" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
@@ -209,7 +232,7 @@
 				<Shortcut Id="ApplicationDesktopShortcut"
 				   Name="ONE"
 				   Description="ONE"
-				   Target="[#ONE.exe]"
+				   Target="[#ONE.bat]"
 				   WorkingDirectory="INSTALLFOLDER" Icon="app.ico"/>
 				<RemoveFolder Id="DesktopFolder" On="uninstall"/>
 				<RegistryValue Root="HKCU"
@@ -220,5 +243,22 @@
 				  KeyPath="yes"/>
 			</Component>
 		</DirectoryRef>
+    <Property Id="APPLICATIONFOLDER">
+      <RegistrySearch Root="HKCU" Key="Software\ONEInterpreting\ONE" Type="raw" Id="APPLICATIONFOLDER_REGSEARCH" Name="ONEExe" />
+    </Property>
+    <DirectoryRef Id="LocalUserDataFolder">
+      <Component Id="LocalUserDataFolder_components" Guid="{C0E0B7EF-198A-41F6-9557-7F808CDED79C}">
+        
+            <RemoveFolder Id="LocalUserDataFolder" On="both" />
+            <util:RemoveFolderEx On="uninstall" Property="APPLICATIONFOLDER" />
+
+            <!--<CreateFolder>
+								<util:PermissionEx User="Users" GenericAll="yes" />
+						</CreateFolder>-->
+            <RegistryKey Root="HKCU" Key="Software\ONEInterpreting\ONE">
+              <RegistryValue Name="ONEExe" Value="1" KeyPath="yes" Type="integer" />
+            </RegistryKey>
+          </Component>
+    </DirectoryRef>
 	</Fragment>
 </Wix>
