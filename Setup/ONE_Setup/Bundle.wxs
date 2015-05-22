@@ -17,7 +17,8 @@
 
 			<RollbackBoundary />
 
-			<MsiPackage Id="MainPackage" SourceFile="D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi" DisplayInternalUI="yes" Compressed="yes" Vital="yes" />
+			<MsiPackage Id="MainPackage" SourceFile="D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi" 
+                  DisplayInternalUI="yes" Compressed="yes" Vital="yes" />
 		</Chain>
 	</Bundle>
 	<!--<Fragment>

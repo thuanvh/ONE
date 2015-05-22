@@ -5,7 +5,7 @@
 	<Product Id="*" Name="ONE" Language="1033" Version="1.0.0.0" Manufacturer="ONE Interpreting" UpgradeCode="90f859ab-1437-406f-823f-7d52276664fd">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<!--<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />-->
 		<MediaTemplate />
 
 		<Feature Id="ProductFeature" Title="ONE" Level="1">
@@ -20,8 +20,30 @@
 			<ComponentRef Id="ApplicationShortcutDesktop"/>
       <ComponentRef Id="LocalUserDataFolder_components"/>
 		</Feature>
-	</Product>
-
+    <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
+    <Upgrade Id="{90f859ab-1437-406f-823f-7d52276664fd}">
+      <UpgradeVersion
+         Minimum="1.0.0.0" Maximum="99.0.0.0"
+         Property="PREVIOUSVERSIONSINSTALLED"
+         IncludeMinimum="yes" IncludeMaximum="no" />
+    </Upgrade>
+    <CustomAction Id="Cleanup_logfile" Directory="LocalUserDataFolder"
+    ExeCommand="cmd /C &quot;del /F /S /Q *.*&quot;"
+    Execute="deferred" Return="ignore" HideTarget="no" Impersonate="no" />
+    <CustomAction Id="Remove_dir" Directory="LocalUserDataFolder"
+    ExeCommand="cmd /C &quot;rd /S /Q .&quot;"
+    Execute="deferred" Return="ignore" HideTarget="no" Impersonate="no" />
+    <InstallExecuteSequence>
+      <Custom Action="Remove_dir" After="RemoveFiles" >
+        REMOVE="ALL"
+      </Custom>
+      <RemoveExistingProducts After="InstallInitialize" />
+      <!--<Custom Action="Cleanup_logfile" After="InstallInitialize" >
+        REMOVE="ALL"
+      </Custom>-->
+    </InstallExecuteSequence>
+  </Product>
+  
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
@@ -91,10 +113,11 @@
 			<Component Id="Main_Prog" Guid="{63E14B85-4EF7-4722-9E93-1E0CB82BE7C8}" KeyPath="yes">
 				<!--<File Id="Test.exe" Source="d:\sandbox\utility\chromium\src\install\Test.exe"  Checksum="yes">
 				</File>-->
-				<File Id="ONE.bat" Source="d:\sandbox\utility\chromium\src\install\ONE.bat" Checksum="yes"/>
+				<File Id="ONE.bat" Source="d:\sandbox\utility\chromium\src\install\chrome.exe" Checksum="yes"/>
 			</Component>
 			<Component Id="DependFiles" Guid="{732E7E6A-8AE0-494B-9501-35CC40C299B6}" KeyPath="yes">
-        <File Id="chrome.exe" Source="d:\sandbox\utility\chromium\src\install\chrome.exe" Checksum="yes"/>
+        <!--<File Id="chrome.exe" Source="d:\sandbox\utility\chromium\src\install\chrome.exe" Checksum="yes"/>-->
+        <File Id="master_preferences" Source="d:\sandbox\utility\chromium\src\install\master_preferences" />
 				<File Id="First_Run" Source="d:\sandbox\utility\chromium\src\install\First Run" />
 				<File Id="gyp_win_tool" Source="d:\sandbox\utility\chromium\src\install\gyp-win-tool" />
 				<File Id="nacl_irt_x86_32.nexe.cmd" Source="d:\sandbox\utility\chromium\src\install\nacl_irt_x86_32.nexe.cmd" />
@@ -221,10 +244,11 @@
 				<Shortcut Id="ApplicationStartMenuShortcut"
 						  Name="ONE"
 						  Description="ONE"
-						  Target="[#ONE.bat]"
+						  Target="[#ONE.bat]" Arguments="--no-default-browser-check --no-first-run"
 						  WorkingDirectory="INSTALLFOLDER" Icon="app.ico" />
-				<RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
-				<RegistryValue Root="HKCU" Key="Software\Microsoft\ONE" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+        <RemoveFile Id="RemoveApplicationShortcutFile" Name="ONE" On="uninstall"/>
+        <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\ONEInterpreting\ONE" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
 			</Component>
 		</DirectoryRef>
 		<DirectoryRef Id="DesktopFolder" >
@@ -232,15 +256,11 @@
 				<Shortcut Id="ApplicationDesktopShortcut"
 				   Name="ONE"
 				   Description="ONE"
-				   Target="[#ONE.bat]"
+				   Target="[#ONE.bat]" Arguments="--no-default-browser-check --no-first-run"
 				   WorkingDirectory="INSTALLFOLDER" Icon="app.ico"/>
-				<RemoveFolder Id="DesktopFolder" On="uninstall"/>
-				<RegistryValue Root="HKCU"
-				  Key="Software/ONE"
-				  Name="installed"
-				  Type="integer"
-				  Value="1"
-				  KeyPath="yes"/>
+        <RemoveFile Id="RemoveApplicationShortcutDesktopFile" Name="ONE" On="uninstall"/>
+				<RemoveFolder Id="RemoveDesktopFolder" Directory="DesktopFolder" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\ONEInterpreting\ONE" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
 			</Component>
 		</DirectoryRef>
     <Property Id="APPLICATIONFOLDER">
@@ -248,13 +268,13 @@
     </Property>
     <DirectoryRef Id="LocalUserDataFolder">
       <Component Id="LocalUserDataFolder_components" Guid="{C0E0B7EF-198A-41F6-9557-7F808CDED79C}">
-        
-            <RemoveFolder Id="LocalUserDataFolder" On="both" />
+            <RemoveFile Id="RemoveLocalUserDataFolderFile" Name="*.*" On="both" />
+            <RemoveFolder Id="RemoveLocalUserDataFolder" Directory="LocalUserDataFolder" On="both" />
             <util:RemoveFolderEx On="uninstall" Property="APPLICATIONFOLDER" />
 
-            <!--<CreateFolder>
+            <CreateFolder>
 								<util:PermissionEx User="Users" GenericAll="yes" />
-						</CreateFolder>-->
+						</CreateFolder>
             <RegistryKey Root="HKCU" Key="Software\ONEInterpreting\ONE">
               <RegistryValue Name="ONEExe" Value="1" KeyPath="yes" Type="integer" />
             </RegistryKey>
