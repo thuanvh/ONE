@@ -126,13 +126,13 @@ void SyncPrefs::RegisterProfilePrefs(
   // already acknowledged.
   syncer::ModelTypeSet model_set;
   model_set.Put(syncer::BOOKMARKS);
-  //model_set.Put(syncer::PREFERENCES);
+   model_set.Put(syncer::PREFERENCES);
   model_set.Put(syncer::PASSWORDS);
   model_set.Put(syncer::AUTOFILL_PROFILE);
   model_set.Put(syncer::AUTOFILL_WALLET_DATA);
   model_set.Put(syncer::AUTOFILL);
   model_set.Put(syncer::THEMES);
-  //model_set.Put(syncer::EXTENSIONS);
+   model_set.Put(syncer::EXTENSIONS);
   model_set.Put(syncer::NIGORI);
   model_set.Put(syncer::SEARCH_ENGINES);
   model_set.Put(syncer::APPS);
@@ -215,7 +215,7 @@ void SyncPrefs::SetLastSyncedTime(base::Time time) {
 
 bool SyncPrefs::HasKeepEverythingSynced() const {
   DCHECK(CalledOnValidThread());
-  return false;//pref_service_->GetBoolean(prefs::kSyncKeepEverythingSynced);
+  return /*false;*/pref_service_->GetBoolean(prefs::kSyncKeepEverythingSynced);
 }
 
 void SyncPrefs::SetKeepEverythingSynced(bool keep_everything_synced) {
@@ -420,11 +420,11 @@ void SyncPrefs::RegisterPrefGroups() {
   pref_groups_[syncer::AUTOFILL].Put(syncer::AUTOFILL_PROFILE);
   pref_groups_[syncer::AUTOFILL].Put(syncer::AUTOFILL_WALLET_DATA);
 
-  //pref_groups_[syncer::EXTENSIONS].Put(syncer::EXTENSION_SETTINGS);
+   pref_groups_[syncer::EXTENSIONS].Put(syncer::EXTENSION_SETTINGS);
 
-  //pref_groups_[syncer::PREFERENCES].Put(syncer::DICTIONARY);
-  //pref_groups_[syncer::PREFERENCES].Put(syncer::PRIORITY_PREFERENCES);
-  //pref_groups_[syncer::PREFERENCES].Put(syncer::SEARCH_ENGINES);
+   pref_groups_[syncer::PREFERENCES].Put(syncer::DICTIONARY);
+   pref_groups_[syncer::PREFERENCES].Put(syncer::PRIORITY_PREFERENCES);
+   pref_groups_[syncer::PREFERENCES].Put(syncer::SEARCH_ENGINES);
 
   pref_groups_[syncer::TYPED_URLS].Put(syncer::HISTORY_DELETE_DIRECTIVES);
   pref_groups_[syncer::TYPED_URLS].Put(syncer::SESSIONS);

@@ -106,8 +106,8 @@ bool GetConfiguration(const std::string& json, SyncConfigInfo* config) {
     DLOG(ERROR) << "GetConfiguration() not passed a syncNothing value";
     return false;
   }
-  config->sync_everything = false;
-  config->sync_nothing = false;
+  //config->sync_everything = false;
+  //config->sync_nothing = false;
   DCHECK(!(config->sync_everything && config->sync_nothing))
       << "syncAllDataTypes and syncNothing cannot both be true";
 
@@ -121,11 +121,11 @@ bool GetConfiguration(const std::string& json, SyncConfigInfo* config) {
       DLOG(ERROR) << "GetConfiguration() not passed a value for " << key_name;
       return false;
     }
-	if(it->first == syncer::EXTENSIONS ||
+	/*if(it->first == syncer::EXTENSIONS ||
 	   it->first == syncer::PREFERENCES ||
 	   it->first == syncer::EXTENSION_SETTINGS || 
 	   it->first == syncer::APP_SETTINGS)
-		continue;
+		continue;*/
     if (sync_value)
       config->data_types.Put(it->first);
   }
