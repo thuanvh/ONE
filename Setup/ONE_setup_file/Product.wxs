@@ -21,6 +21,7 @@
       <ComponentRef Id="LocalUserDataFolder_components"/>
 		</Feature>
     <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
+    <Property Id='ARPPRODUCTICON' Value='app.ico' />
     <Upgrade Id="{90f859ab-1437-406f-823f-7d52276664fd}">
       <UpgradeVersion
          Minimum="1.0.0.0" Maximum="99.0.0.0"
@@ -156,8 +157,9 @@
 				<!--<File Id="_39.0.2171.71.manifest" Source="d:\sandbox\utility\chromium\src\install\39.0.2171.71.manifest" />
 				<File Id="_39.0.2171.90.manifest" Source="d:\sandbox\utility\chromium\src\install\39.0.2171.90.manifest" />-->
         <!--<File Id="_42.0.2311.90.manifest" Source="d:\sandbox\utility\chromium\src\install\42.0.2311.90.manifest" />-->
-        <File Id="_42.0.2311.152.manifest" Source="d:\sandbox\utility\chromium\src\install\42.0.2311.152.manifest" />
-				<File Id="nacl_irt_x86_32.nexe" Source="d:\sandbox\utility\chromium\src\install\nacl_irt_x86_32.nexe" />
+        <!--<File Id="_42.0.2311.152.manifest" Source="d:\sandbox\utility\chromium\src\install\42.0.2311.152.manifest" />-->
+        <File Id="_43.0.2357.81.manifest" Source="d:\sandbox\utility\chromium\src\install\43.0.2357.81.manifest" />
+        <File Id="nacl_irt_x86_32.nexe" Source="d:\sandbox\utility\chromium\src\install\nacl_irt_x86_32.nexe" />
 				<File Id="nacl_irt_x86_64.nexe" Source="d:\sandbox\utility\chromium\src\install\nacl_irt_x86_64.nexe" />
 				<!--<File Id="build.ninja" Source="d:\sandbox\utility\chromium\src\install\build.ninja" />-->
 				<File Id="chrome_100_percent.pak" Source="d:\sandbox\utility\chromium\src\install\chrome_100_percent.pak" />
@@ -238,7 +240,7 @@
         <File Id="pepflashplayer.dll" Source="d:\sandbox\utility\chromium\src\install\PepperFlash\pepflashplayer.dll"/>
 			</Component>
 		</ComponentGroup>
-		<Icon Id="app.ico" SourceFile="D:\sandbox\utility\chromium\src\branch_release\src\chrome\app\theme\chromium\chromium.ico" />    
+		<Icon Id="app.ico" SourceFile="D:\sandbox\utility\chromium\src\git\ONE\changes\ONE\code\app\theme\chromium\chromium.ico" />    
     <DirectoryRef Id="ApplicationProgramsFolder">
 			<Component Id="ApplicationShortcut" Guid="{5E63F11A-03F8-4C3C-8F0E-1B53172C4FB0}">
 				<Shortcut Id="ApplicationStartMenuShortcut"
