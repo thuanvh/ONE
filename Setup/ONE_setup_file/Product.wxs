@@ -246,7 +246,7 @@
 				<Shortcut Id="ApplicationStartMenuShortcut"
 						  Name="ONE"
 						  Description="ONE"
-						  Target="[#ONE.bat]" Arguments="--no-default-browser-check --no-first-run"
+						  Target="[#ONE.bat]" Arguments="--no-default-browser-check --no-first-run --enable-new-profile-management --enable-account-consistency"
 						  WorkingDirectory="INSTALLFOLDER" Icon="app.ico" />
         <RemoveFile Id="RemoveApplicationShortcutFile" Name="ONE" On="uninstall"/>
         <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall"/>
@@ -258,7 +258,7 @@
 				<Shortcut Id="ApplicationDesktopShortcut"
 				   Name="ONE"
 				   Description="ONE"
-				   Target="[#ONE.bat]" Arguments="--no-default-browser-check --no-first-run"
+				   Target="[#ONE.bat]" Arguments="--no-default-browser-check --no-first-run --enable-new-profile-management --enable-account-consistency"
 				   WorkingDirectory="INSTALLFOLDER" Icon="app.ico"/>
         <RemoveFile Id="RemoveApplicationShortcutDesktopFile" Name="ONE" On="uninstall"/>
 				<RemoveFolder Id="RemoveDesktopFolder" Directory="DesktopFolder" On="uninstall"/>
