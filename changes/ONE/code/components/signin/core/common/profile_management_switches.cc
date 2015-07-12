@@ -24,29 +24,23 @@ enum State {
 };
 
 State GetProcessState() {
-  // Disables the new avatar menu if the web-based signin is turned on, because
-  // the new avatar menu always uses the inline signin, which may break some
-  // SAML users.
-  if (switches::IsEnableWebBasedSignin())
-    return STATE_OLD_AVATAR_MENU;
-
   // Find the state of both command line args.
-  bool is_new_avatar_menu = true;/*base::CommandLine::ForCurrentProcess()->HasSwitch(
-      switches::kEnableNewAvatarMenu);*/
-  bool is_new_profile_management = true;
-      /*base::CommandLine::ForCurrentProcess()->HasSwitch(
-          switches::kEnableNewProfileManagement);*/
-  bool is_consistent_identity = true;
-      /*base::CommandLine::ForCurrentProcess()->HasSwitch(
-          switches::kEnableAccountConsistency);*/
-  bool not_new_avatar_menu = false;/*base::CommandLine::ForCurrentProcess()->HasSwitch(
-      switches::kDisableNewAvatarMenu);*/
-  bool not_new_profile_management = false;/*
+  bool is_new_avatar_menu = base::CommandLine::ForCurrentProcess()->HasSwitch(
+      switches::kEnableNewAvatarMenu);/*true;*/
+  bool is_new_profile_management =
       base::CommandLine::ForCurrentProcess()->HasSwitch(
-          switches::kDisableNewProfileManagement);*/
-  bool not_consistent_identity = false;/*
+          switches::kEnableNewProfileManagement);/* true;*/
+  bool is_consistent_identity =
       base::CommandLine::ForCurrentProcess()->HasSwitch(
-          switches::kDisableAccountConsistency);*/
+          switches::kEnableAccountConsistency);/* true;*/
+  bool not_new_avatar_menu = base::CommandLine::ForCurrentProcess()->HasSwitch(
+      switches::kDisableNewAvatarMenu);/*false;*/
+  bool not_new_profile_management =
+      base::CommandLine::ForCurrentProcess()->HasSwitch(
+          switches::kDisableNewProfileManagement);/* false;*/
+  bool not_consistent_identity =
+      base::CommandLine::ForCurrentProcess()->HasSwitch(
+          switches::kDisableAccountConsistency); /*false;*/
   int count_args = (is_new_avatar_menu ? 1 : 0) +
       (is_new_profile_management ? 1 : 0) +
       (is_consistent_identity ? 1 : 0) +
@@ -91,7 +85,7 @@ State GetProcessState() {
   }
 
   // Set the default state
-#if defined(OS_ANDROID)
+#if defined(OS_ANDROID) || defined(OS_IOS)
   State state = STATE_ACCOUNT_CONSISTENCY;
 #else
   State state = STATE_OLD_AVATAR_MENU;
@@ -126,12 +120,6 @@ namespace switches {
 
 bool IsEnableAccountConsistency() {
   return GetProcessState() >= STATE_ACCOUNT_CONSISTENCY;
-}
-
-bool IsEnableWebBasedSignin() {
-  return base::CommandLine::ForCurrentProcess()->HasSwitch(
-             switches::kEnableWebBasedSignin) &&
-         !IsEnableWebviewBasedSignin();
 }
 
 bool IsEnableWebviewBasedSignin() {

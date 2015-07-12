@@ -54,7 +54,8 @@ BrowserDistribution::Type GetCurrentDistributionType() {
 BrowserDistribution::BrowserDistribution()
     : type_(CHROME_BROWSER),
       app_reg_data_(make_scoped_ptr(
-          new NonUpdatingAppRegistrationData(L"Software\\ONE"))) {
+          new NonUpdatingAppRegistrationData(L"Software\\Chromium"))) {
+          //new NonUpdatingAppRegistrationData(L"Software\\ONE"))) {
 }
 
 BrowserDistribution::BrowserDistribution(
@@ -152,7 +153,8 @@ base::string16 BrowserDistribution::GetActiveSetupGuid() {
 }
 
 base::string16 BrowserDistribution::GetBaseAppName() {
-  return L"ONE";
+  return L"Chromium";
+  //return L"ONE";
 }
 
 base::string16 BrowserDistribution::GetDisplayName() {
@@ -200,6 +202,7 @@ base::string16 BrowserDistribution::GetStartMenuShortcutSubfolder(
 }
 
 base::string16 BrowserDistribution::GetBaseAppId() {
+  //return L"Chromium";
   return L"ONE";
 }
 
@@ -211,15 +214,18 @@ base::string16 BrowserDistribution::GetBrowserProgIdPrefix() {
 }
 
 base::string16 BrowserDistribution::GetBrowserProgIdDesc() {
-  return L"ONE HTML Document";
+  return L"Chromium HTML Document";
+  //return L"ONE HTML Document";
 }
 
 
 base::string16 BrowserDistribution::GetInstallSubDir() {
+  //return L"Chromium";
   return L"ONE";
 }
 
 base::string16 BrowserDistribution::GetPublisherName() {
+  //return L"Chromium";
   return L"ONE";
 }
 
@@ -234,7 +240,8 @@ base::string16 BrowserDistribution::GetLongAppDescription() {
 }
 
 std::string BrowserDistribution::GetSafeBrowsingName() {
-  return "ONE";
+  return "chromium";
+  //return "ONE";
 }
 
 std::string BrowserDistribution::GetNetworkStatsServer() const {
@@ -246,11 +253,13 @@ base::string16 BrowserDistribution::GetDistributionData(HKEY root_key) {
 }
 
 base::string16 BrowserDistribution::GetUninstallLinkName() {
-  return L"Uninstall ONE";
+  return L"Uninstall Chromium";
+  //return L"Uninstall ONE";
 }
 
 base::string16 BrowserDistribution::GetUninstallRegPath() {
-  return L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\ONE";
+  return L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Chromium";
+  //return L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\ONE";
 }
 
 BrowserDistribution::DefaultBrowserControlPolicy

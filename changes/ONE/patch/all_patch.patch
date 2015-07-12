@@ -1,3 +1,35 @@
+ chrome/app/theme/chromium/mac/app.icns             | Bin 147653 -> 92038 bytes
+ chrome/app/theme/chromium/mac/document.icns        | Bin 86929 -> 92038 bytes
+ chrome/app/theme/chromium/product_logo_128.png     | Bin 10100 -> 11127 bytes
+ chrome/app/theme/chromium/product_logo_22.png      | Bin 1100 -> 1522 bytes
+ chrome/app/theme/chromium/product_logo_22_mono.png | Bin 537 -> 1522 bytes
+ chrome/app/theme/chromium/product_logo_24.png      | Bin 1262 -> 1656 bytes
+ chrome/app/theme/chromium/product_logo_256.png     | Bin 23096 -> 23190 bytes
+ chrome/app/theme/chromium/product_logo_48.png      | Bin 2961 -> 3814 bytes
+ chrome/app/theme/chromium/product_logo_64.png      | Bin 4455 -> 5268 bytes
+ chrome/app/theme/chromium/product_logo_name_48.png | Bin 6732 -> 7494 bytes
+ chrome/app/theme/chromium/product_logo_name_96.png | Bin 13698 -> 12956 bytes
+ chrome/app/theme/chromium/win/chromium.ico         | Bin 48292 -> 4286 bytes
+ .../default_100_percent/chromium/product_logo.png  | Bin 2300 -> 4336 bytes
+ .../chromium/product_logo_16.png                   | Bin 725 -> 1204 bytes
+ .../chromium/product_logo_26.png                   | Bin 1614 -> 1834 bytes
+ .../chromium/product_logo_32.png                   | Bin 1880 -> 2359 bytes
+ .../chromium/product_logo_name_48.png              | Bin 4586 -> 7354 bytes
+ .../default_200_percent/chromium/product_logo.png  | Bin 4991 -> 9612 bytes
+ .../chromium/product_logo_16.png                   | Bin 1779 -> 2359 bytes
+ .../chromium/product_logo_32.png                   | Bin 4223 -> 5268 bytes
+ .../chromium/product_logo_name_48.png              | Bin 10702 -> 9612 bytes
+ .../chromium/product_logo_white.png                | Bin 4935 -> 9612 bytes
+ .../browser/background/background_mode_manager.cc  |   2 +-
+ .../browser/extensions/external_provider_impl.cc   |   4 +++-
+ chrome/browser/profiles/profiles_state.cc          |   4 ++--
+ .../browser/ui/startup/default_browser_prompt.cc   |   2 +-
+ .../browser/ui/startup/startup_browser_creator.cc  |  14 ++++++++++++++
+ chrome/common/chrome_content_client.cc             |  14 +++++++++++---
+ chrome/installer/util/browser_distribution.cc      |  15 ++++++++++++---
+ .../core/common/profile_management_switches.cc     |  12 ++++++------
+ 30 files changed, 50 insertions(+), 17 deletions(-)
+
 diff --git a/chrome/app/theme/chromium/mac/app.icns b/chrome/app/theme/chromium/mac/app.icns
 index 055e46b..ffe8ade 100644
 Binary files a/chrome/app/theme/chromium/mac/app.icns and b/chrome/app/theme/chromium/mac/app.icns differ
@@ -78,10 +110,10 @@ index 4e4a2e7..372531f 100644
  
  void BackgroundModeManager::RegisterProfile(Profile* profile) {
 diff --git a/chrome/browser/extensions/external_provider_impl.cc b/chrome/browser/extensions/external_provider_impl.cc
-index 98dfc63..489740c 100644
+index f312288..47106d0 100644
 --- a/chrome/browser/extensions/external_provider_impl.cc
 +++ b/chrome/browser/extensions/external_provider_impl.cc
-@@ -97,7 +97,7 @@ void ExternalProviderImpl::VisitRegisteredExtension() {
+@@ -98,7 +98,7 @@ void ExternalProviderImpl::VisitRegisteredExtension() {
  
  void ExternalProviderImpl::SetPrefs(base::DictionaryValue* prefs) {
    CHECK(BrowserThread::CurrentlyOn(BrowserThread::UI));
@@ -90,7 +122,7 @@ index 98dfc63..489740c 100644
    // Check if the service is still alive. It is possible that it went
    // away while |loader_| was working on the FILE thread.
    if (!service_) return;
-@@ -238,6 +238,7 @@ void ExternalProviderImpl::SetPrefs(base::DictionaryValue* prefs) {
+@@ -239,6 +239,7 @@ void ExternalProviderImpl::SetPrefs(base::DictionaryValue* prefs) {
      extension->GetString(kInstallParam, &install_parameter);
  
      if (has_external_crx) {
@@ -98,18 +130,16 @@ index 98dfc63..489740c 100644
        if (crx_location_ == Manifest::INVALID_LOCATION) {
          LOG(WARNING) << "This provider does not support installing external "
                       << "extensions from crx files.";
-@@ -275,7 +276,8 @@ void ExternalProviderImpl::SetPrefs(base::DictionaryValue* prefs) {
+@@ -276,6 +277,7 @@ void ExternalProviderImpl::SetPrefs(base::DictionaryValue* prefs) {
                                               auto_acknowledge_,
                                               install_immediately_);
      } else {  // if (has_external_update_url)
--      CHECK(has_external_update_url);  // Checking of keys above ensures this.
 +      continue;
-+	  CHECK(has_external_update_url);  // Checking of keys above ensures this.
+       CHECK(has_external_update_url);  // Checking of keys above ensures this.
        if (download_location_ == Manifest::INVALID_LOCATION) {
          LOG(WARNING) << "This provider does not support installing external "
-                      << "extensions from update URLs.";
 diff --git a/chrome/browser/profiles/profiles_state.cc b/chrome/browser/profiles/profiles_state.cc
-index 48543c1..266b58f 100644
+index dd532c2..50b0f70 100644
 --- a/chrome/browser/profiles/profiles_state.cc
 +++ b/chrome/browser/profiles/profiles_state.cc
 @@ -48,8 +48,8 @@ void RegisterPrefs(PrefRegistrySimple* registry) {
@@ -124,7 +154,7 @@ index 48543c1..266b58f 100644
  
  base::string16 GetAvatarNameForProfile(const base::FilePath& profile_path) {
 diff --git a/chrome/browser/ui/startup/default_browser_prompt.cc b/chrome/browser/ui/startup/default_browser_prompt.cc
-index fcd0798..e0ac8d0 100644
+index 5853399..6e0926e 100644
 --- a/chrome/browser/ui/startup/default_browser_prompt.cc
 +++ b/chrome/browser/ui/startup/default_browser_prompt.cc
 @@ -224,7 +224,7 @@ void ShowDefaultBrowserPrompt(Profile* profile, HostDesktopType desktop_type) {
@@ -137,7 +167,7 @@ index fcd0798..e0ac8d0 100644
        prefs::kDefaultBrowserSettingEnabled)) {
      if (g_browser_process->local_state()->GetBoolean(
 diff --git a/chrome/browser/ui/startup/startup_browser_creator.cc b/chrome/browser/ui/startup/startup_browser_creator.cc
-index 751349e..5672410 100644
+index c093c18..081018a 100644
 --- a/chrome/browser/ui/startup/startup_browser_creator.cc
 +++ b/chrome/browser/ui/startup/startup_browser_creator.cc
 @@ -43,6 +43,7 @@
@@ -148,7 +178,7 @@ index 751349e..5672410 100644
  #include "chrome/browser/ui/app_list/app_list_service.h"
  #include "chrome/browser/ui/browser.h"
  #include "chrome/browser/ui/browser_dialogs.h"
-@@ -410,6 +411,19 @@ SessionStartupPref StartupBrowserCreator::GetSessionStartupPref(
+@@ -420,6 +421,19 @@ SessionStartupPref StartupBrowserCreator::GetSessionStartupPref(
      pref.type = SessionStartupPref::DEFAULT;
    }
  
@@ -168,37 +198,11 @@ index 751349e..5672410 100644
    return pref;
  }
  
-diff --git a/chrome/browser/ui/webui/options/sync_setup_handler.cc b/chrome/browser/ui/webui/options/sync_setup_handler.cc
-index 9d2abb4..0687299 100644
---- a/chrome/browser/ui/webui/options/sync_setup_handler.cc
-+++ b/chrome/browser/ui/webui/options/sync_setup_handler.cc
-@@ -106,7 +106,8 @@ bool GetConfiguration(const std::string& json, SyncConfigInfo* config) {
-     DLOG(ERROR) << "GetConfiguration() not passed a syncNothing value";
-     return false;
-   }
--
-+  //config->sync_everything = false;
-+  //config->sync_nothing = false;
-   DCHECK(!(config->sync_everything && config->sync_nothing))
-       << "syncAllDataTypes and syncNothing cannot both be true";
- 
-@@ -120,6 +121,11 @@ bool GetConfiguration(const std::string& json, SyncConfigInfo* config) {
-       DLOG(ERROR) << "GetConfiguration() not passed a value for " << key_name;
-       return false;
-     }
-+	/*if(it->first == syncer::EXTENSIONS ||
-+	   it->first == syncer::PREFERENCES ||
-+	   it->first == syncer::EXTENSION_SETTINGS || 
-+	   it->first == syncer::APP_SETTINGS)
-+		continue;*/
-     if (sync_value)
-       config->data_types.Put(it->first);
-   }
 diff --git a/chrome/common/chrome_content_client.cc b/chrome/common/chrome_content_client.cc
-index 21df9e0..3f4933d 100644
+index 5372f9a..d676292 100644
 --- a/chrome/common/chrome_content_client.cc
 +++ b/chrome/common/chrome_content_client.cc
-@@ -347,20 +347,28 @@ content::PepperPluginInfo CreatePepperFlashInfo(const base::FilePath& path,
+@@ -350,20 +350,28 @@ content::PepperPluginInfo CreatePepperFlashInfo(const base::FilePath& path,
  
  void AddPepperFlashFromCommandLine(
      std::vector<content::PepperPluginInfo>* plugins) {
@@ -231,162 +235,106 @@ index 21df9e0..3f4933d 100644
  
  bool GetBundledPepperFlash(content::PepperPluginInfo* plugin) {
 diff --git a/chrome/installer/util/browser_distribution.cc b/chrome/installer/util/browser_distribution.cc
-index dd7918d..74e427f 100644
+index dd7918d..fa0d6de 100644
 --- a/chrome/installer/util/browser_distribution.cc
 +++ b/chrome/installer/util/browser_distribution.cc
-@@ -54,7 +54,7 @@ BrowserDistribution::Type GetCurrentDistributionType() {
- BrowserDistribution::BrowserDistribution()
+@@ -55,6 +55,7 @@ BrowserDistribution::BrowserDistribution()
      : type_(CHROME_BROWSER),
        app_reg_data_(make_scoped_ptr(
--          new NonUpdatingAppRegistrationData(L"Software\\Chromium"))) {
-+          new NonUpdatingAppRegistrationData(L"Software\\ONE"))) {
+           new NonUpdatingAppRegistrationData(L"Software\\Chromium"))) {
++          //new NonUpdatingAppRegistrationData(L"Software\\ONE"))) {
  }
  
  BrowserDistribution::BrowserDistribution(
-@@ -152,7 +152,7 @@ base::string16 BrowserDistribution::GetActiveSetupGuid() {
- }
+@@ -153,6 +154,7 @@ base::string16 BrowserDistribution::GetActiveSetupGuid() {
  
  base::string16 BrowserDistribution::GetBaseAppName() {
--  return L"Chromium";
-+  return L"ONE";
+   return L"Chromium";
++  //return L"ONE";
  }
  
  base::string16 BrowserDistribution::GetDisplayName() {
-@@ -200,7 +200,7 @@ base::string16 BrowserDistribution::GetStartMenuShortcutSubfolder(
+@@ -200,7 +202,8 @@ base::string16 BrowserDistribution::GetStartMenuShortcutSubfolder(
  }
  
  base::string16 BrowserDistribution::GetBaseAppId() {
 -  return L"Chromium";
++  //return L"Chromium";
 +  return L"ONE";
  }
  
  base::string16 BrowserDistribution::GetBrowserProgIdPrefix() {
-@@ -211,16 +211,16 @@ base::string16 BrowserDistribution::GetBrowserProgIdPrefix() {
- }
+@@ -212,15 +215,18 @@ base::string16 BrowserDistribution::GetBrowserProgIdPrefix() {
  
  base::string16 BrowserDistribution::GetBrowserProgIdDesc() {
--  return L"Chromium HTML Document";
-+  return L"ONE HTML Document";
+   return L"Chromium HTML Document";
++  //return L"ONE HTML Document";
  }
  
  
  base::string16 BrowserDistribution::GetInstallSubDir() {
 -  return L"Chromium";
++  //return L"Chromium";
 +  return L"ONE";
  }
  
  base::string16 BrowserDistribution::GetPublisherName() {
 -  return L"Chromium";
++  //return L"Chromium";
 +  return L"ONE";
  }
  
  base::string16 BrowserDistribution::GetAppDescription() {
-@@ -234,7 +234,7 @@ base::string16 BrowserDistribution::GetLongAppDescription() {
- }
+@@ -235,6 +241,7 @@ base::string16 BrowserDistribution::GetLongAppDescription() {
  
  std::string BrowserDistribution::GetSafeBrowsingName() {
--  return "chromium";
-+  return "ONE";
+   return "chromium";
++  //return "ONE";
  }
  
  std::string BrowserDistribution::GetNetworkStatsServer() const {
-@@ -246,11 +246,11 @@ base::string16 BrowserDistribution::GetDistributionData(HKEY root_key) {
- }
+@@ -247,10 +254,12 @@ base::string16 BrowserDistribution::GetDistributionData(HKEY root_key) {
  
  base::string16 BrowserDistribution::GetUninstallLinkName() {
--  return L"Uninstall Chromium";
-+  return L"Uninstall ONE";
+   return L"Uninstall Chromium";
++  //return L"Uninstall ONE";
  }
  
  base::string16 BrowserDistribution::GetUninstallRegPath() {
--  return L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Chromium";
-+  return L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\ONE";
+   return L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Chromium";
++  //return L"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\ONE";
  }
  
  BrowserDistribution::DefaultBrowserControlPolicy
 diff --git a/components/signin/core/common/profile_management_switches.cc b/components/signin/core/common/profile_management_switches.cc
-index 90b1eff..476d87d 100644
+index 88c65ab..c8048de 100644
 --- a/components/signin/core/common/profile_management_switches.cc
 +++ b/components/signin/core/common/profile_management_switches.cc
-@@ -31,22 +31,22 @@ State GetProcessState() {
-     return STATE_OLD_AVATAR_MENU;
- 
+@@ -26,21 +26,21 @@ enum State {
+ State GetProcessState() {
    // Find the state of both command line args.
--  bool is_new_avatar_menu = base::CommandLine::ForCurrentProcess()->HasSwitch(
+   bool is_new_avatar_menu = base::CommandLine::ForCurrentProcess()->HasSwitch(
 -      switches::kEnableNewAvatarMenu);
--  bool is_new_profile_management =
-+  bool is_new_avatar_menu = true;/*base::CommandLine::ForCurrentProcess()->HasSwitch(
-+      switches::kEnableNewAvatarMenu);*/
-+  bool is_new_profile_management = true;
-+      /*base::CommandLine::ForCurrentProcess()->HasSwitch(
-+          switches::kEnableNewProfileManagement);*/
-+  bool is_consistent_identity = true;
-+      /*base::CommandLine::ForCurrentProcess()->HasSwitch(
-+          switches::kEnableAccountConsistency);*/
-+  bool not_new_avatar_menu = false;/*base::CommandLine::ForCurrentProcess()->HasSwitch(
-+      switches::kDisableNewAvatarMenu);*/
-+  bool not_new_profile_management = false;/*
++      switches::kEnableNewAvatarMenu);/*true;*/
+   bool is_new_profile_management =
        base::CommandLine::ForCurrentProcess()->HasSwitch(
 -          switches::kEnableNewProfileManagement);
--  bool is_consistent_identity =
-+          switches::kDisableNewProfileManagement);*/
-+  bool not_consistent_identity = false;/*
++          switches::kEnableNewProfileManagement);/* true;*/
+   bool is_consistent_identity =
        base::CommandLine::ForCurrentProcess()->HasSwitch(
 -          switches::kEnableAccountConsistency);
--  bool not_new_avatar_menu = base::CommandLine::ForCurrentProcess()->HasSwitch(
++          switches::kEnableAccountConsistency);/* true;*/
+   bool not_new_avatar_menu = base::CommandLine::ForCurrentProcess()->HasSwitch(
 -      switches::kDisableNewAvatarMenu);
--  bool not_new_profile_management =
--      base::CommandLine::ForCurrentProcess()->HasSwitch(
++      switches::kDisableNewAvatarMenu);/*false;*/
+   bool not_new_profile_management =
+       base::CommandLine::ForCurrentProcess()->HasSwitch(
 -          switches::kDisableNewProfileManagement);
--  bool not_consistent_identity =
--      base::CommandLine::ForCurrentProcess()->HasSwitch(
++          switches::kDisableNewProfileManagement);/* false;*/
+   bool not_consistent_identity =
+       base::CommandLine::ForCurrentProcess()->HasSwitch(
 -          switches::kDisableAccountConsistency);
-+          switches::kDisableAccountConsistency);*/
++          switches::kDisableAccountConsistency); /*false;*/
    int count_args = (is_new_avatar_menu ? 1 : 0) +
        (is_new_profile_management ? 1 : 0) +
        (is_consistent_identity ? 1 : 0) +
-diff --git a/components/sync_driver/sync_prefs.cc b/components/sync_driver/sync_prefs.cc
-index 23ccbbf..5c68484 100644
---- a/components/sync_driver/sync_prefs.cc
-+++ b/components/sync_driver/sync_prefs.cc
-@@ -126,13 +126,13 @@ void SyncPrefs::RegisterProfilePrefs(
-   // already acknowledged.
-   syncer::ModelTypeSet model_set;
-   model_set.Put(syncer::BOOKMARKS);
--  model_set.Put(syncer::PREFERENCES);
-+   model_set.Put(syncer::PREFERENCES);
-   model_set.Put(syncer::PASSWORDS);
-   model_set.Put(syncer::AUTOFILL_PROFILE);
-   model_set.Put(syncer::AUTOFILL_WALLET_DATA);
-   model_set.Put(syncer::AUTOFILL);
-   model_set.Put(syncer::THEMES);
--  model_set.Put(syncer::EXTENSIONS);
-+   model_set.Put(syncer::EXTENSIONS);
-   model_set.Put(syncer::NIGORI);
-   model_set.Put(syncer::SEARCH_ENGINES);
-   model_set.Put(syncer::APPS);
-@@ -215,7 +215,7 @@ void SyncPrefs::SetLastSyncedTime(base::Time time) {
- 
- bool SyncPrefs::HasKeepEverythingSynced() const {
-   DCHECK(CalledOnValidThread());
--  return pref_service_->GetBoolean(prefs::kSyncKeepEverythingSynced);
-+  return /*false;*/pref_service_->GetBoolean(prefs::kSyncKeepEverythingSynced);
- }
- 
- void SyncPrefs::SetKeepEverythingSynced(bool keep_everything_synced) {
-@@ -420,11 +420,11 @@ void SyncPrefs::RegisterPrefGroups() {
-   pref_groups_[syncer::AUTOFILL].Put(syncer::AUTOFILL_PROFILE);
-   pref_groups_[syncer::AUTOFILL].Put(syncer::AUTOFILL_WALLET_DATA);
- 
--  pref_groups_[syncer::EXTENSIONS].Put(syncer::EXTENSION_SETTINGS);
-+   pref_groups_[syncer::EXTENSIONS].Put(syncer::EXTENSION_SETTINGS);
- 
--  pref_groups_[syncer::PREFERENCES].Put(syncer::DICTIONARY);
--  pref_groups_[syncer::PREFERENCES].Put(syncer::PRIORITY_PREFERENCES);
--  pref_groups_[syncer::PREFERENCES].Put(syncer::SEARCH_ENGINES);
-+   pref_groups_[syncer::PREFERENCES].Put(syncer::DICTIONARY);
-+   pref_groups_[syncer::PREFERENCES].Put(syncer::PRIORITY_PREFERENCES);
-+   pref_groups_[syncer::PREFERENCES].Put(syncer::SEARCH_ENGINES);
- 
-   pref_groups_[syncer::TYPED_URLS].Put(syncer::HISTORY_DELETE_DIRECTIVES);
-   pref_groups_[syncer::TYPED_URLS].Put(syncer::SESSIONS);
