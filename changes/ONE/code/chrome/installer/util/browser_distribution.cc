@@ -24,11 +24,10 @@
 #include "chrome/installer/util/google_chrome_distribution.h"
 #include "chrome/installer/util/google_chrome_sxs_distribution.h"
 #include "chrome/installer/util/install_util.h"
+#include "chrome/installer/util/installer_util_strings.h"
 #include "chrome/installer/util/l10n_string_util.h"
 #include "chrome/installer/util/master_preferences.h"
 #include "chrome/installer/util/non_updating_app_registration_data.h"
-
-#include "installer_util_strings.h"  // NOLINT
 
 using installer::MasterPreferences;
 
@@ -244,17 +243,8 @@ std::string BrowserDistribution::GetSafeBrowsingName() {
   //return "ONE";
 }
 
-std::string BrowserDistribution::GetNetworkStatsServer() const {
-  return "";
-}
-
 base::string16 BrowserDistribution::GetDistributionData(HKEY root_key) {
   return L"";
-}
-
-base::string16 BrowserDistribution::GetUninstallLinkName() {
-  return L"Uninstall Chromium";
-  //return L"Uninstall ONE";
 }
 
 base::string16 BrowserDistribution::GetUninstallRegPath() {
@@ -275,11 +265,8 @@ bool BrowserDistribution::GetChromeChannel(base::string16* channel) {
   return false;
 }
 
-bool BrowserDistribution::GetCommandExecuteImplClsid(
-    base::string16* handler_class_uuid) {
-  if (handler_class_uuid)
-    *handler_class_uuid = kCommandExecuteImplUuid;
-  return true;
+base::string16 BrowserDistribution::GetCommandExecuteImplClsid() {
+  return kCommandExecuteImplUuid;
 }
 
 void BrowserDistribution::UpdateInstallStatus(bool system_install,

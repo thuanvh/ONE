@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Bundle Name="ONE" Version="1.0.0.0" Manufacturer="ONE Interpreting" UpgradeCode="c5c72238-ec02-4b7d-a2b8-88746956b776"
-          IconSourceFile='D:\sandbox\utility\chromium\src\git\ONE\changes\ONE\code\app\theme\chromium\chromium.ico'>		
+	<Bundle Name="ONE" Version="48.0.2564.97" Manufacturer="ONE Interpreting" UpgradeCode="c5c72238-ec02-4b7d-a2b8-88746956b776"
+          IconSourceFile='d:\sandbox\utility\chromium\src\install\chromium.ico'>		
 		<!--<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />-->
 		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
 			<bal:WixStandardBootstrapperApplication
-			  LicenseUrl="" SuppressOptionsUI="yes" LogoFile="D:\sandbox\utility\chromium\src\branch_release\src\chrome\app\theme\chromium\product_logo_64.png"
+			  LicenseUrl="" SuppressOptionsUI="yes" LogoFile="d:\sandbox\utility\chromium\src\install\product_logo_64.png"
 			  xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" />
 		</BootstrapperApplicationRef>
 		<Chain>			
