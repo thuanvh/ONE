@@ -13,7 +13,7 @@
 			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
 			<ExePackage Id="vcredist_x86" Name="Microsoft .NET Framework 4.0 Setup" Cache="no" Compressed="yes" PerMachine="yes" Permanent="yes" Vital="yes"
 							InstallCommand="/q"
-				  SourceFile="vcredist_x86.exe"
+				  SourceFile="vc_redist.x86.exe"
 				  />
 
 			<RollbackBoundary />
