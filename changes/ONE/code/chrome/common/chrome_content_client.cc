@@ -281,10 +281,16 @@ void AddPepperFlashFromCommandLine(
   base::CommandLine::StringType flash_path =
       base::CommandLine::ForCurrentProcess()->GetSwitchValueNative(
           switches::kPpapiFlashPath);
+	#if defined(OS_POSIX)
+	std::string flash_path_str = "";
+  if (flash_path.empty())
+	flash_path_str = "PepperFlash\\pepflashplayer.dll";//std::string("PepperFlash\\pepflashplayer.dll");
+#elif defined(OS_WIN)	
   std::wstring flash_path_str = L"";
   if (flash_path.empty())
 	flash_path_str = L"PepperFlash\\pepflashplayer.dll";//std::string("PepperFlash\\pepflashplayer.dll");
     //return;
+	#endif
 
   // Also get the version from the command-line. Should be something like 11.2
   // or 11.2.123.45.

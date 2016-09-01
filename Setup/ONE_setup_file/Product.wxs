@@ -2,7 +2,7 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
 	 xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension"
 	 xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
-	<Product Id="*" Name="ONE" Language="1033" Version="52.0.2743.82" Manufacturer="ONE Interpreting" UpgradeCode="90f859ab-1437-406f-823f-7d52276664fd">
+	<Product Id="*" Name="ONE" Language="1033" Version="52.0.2743.116" Manufacturer="ONE Interpreting" UpgradeCode="90f859ab-1437-406f-823f-7d52276664fd">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<!--<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />-->
@@ -159,7 +159,8 @@
         <!--<File Id="_42.0.2311.90.manifest" Source="d:\sandbox\utility\chromium\src\install\42.0.2311.90.manifest" />-->
         <!--<File Id="_42.0.2311.152.manifest" Source="d:\sandbox\utility\chromium\src\install\42.0.2311.152.manifest" />-->
         <!--<File Id="_48.0.2564.97.manifest" Source="d:\sandbox\utility\chromium\src\install\48.0.2564.97.manifest" />-->
-        <File Id="_52.0.2743.82.manifest" Source="d:\sandbox\utility\chromium\src\install\52.0.2743.82.manifest" />        
+        <!--<File Id="_52.0.2743.82.manifest" Source="d:\sandbox\utility\chromium\src\install\52.0.2743.82.manifest" />-->
+        <File Id="_52.0.2743.116.manifest" Source="d:\sandbox\utility\chromium\src\install\52.0.2743.116.manifest" />
         <File Id="nacl_irt_x86_32.nexe" Source="d:\sandbox\utility\chromium\src\install\nacl_irt_x86_32.nexe" />
 				<File Id="nacl_irt_x86_64.nexe" Source="d:\sandbox\utility\chromium\src\install\nacl_irt_x86_64.nexe" />
 				<!--<File Id="build.ninja" Source="d:\sandbox\utility\chromium\src\install\build.ninja" />-->
