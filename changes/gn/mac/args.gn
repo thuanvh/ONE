@@ -1,0 +1,17 @@
+# Mac-osx
+# Build arguments go here. Examples:
+#   is_component_build = true
+#   is_debug = false
+# See "gn args <out_dir> --list" for available build arguments.
+is_debug = false
+# is_component_build = true
+remove_webcore_debug_symbols = true
+symbol_level = 0
+enable_nacl = false
+# target_cpu = "x86"
+
+google_api_key = "AIzaSyDEkNT0Ef-ohWiLsh1pPGwIS-n5HW-kxm4"
+google_default_client_id = "181602934179-99m6lgg1lr46ndui4n8bms19fdim1g5i.apps.googleusercontent.com"
+google_default_client_secret = "VOigGfuvnH0hDqUilkHGk5vL"
+
+enable_hangout_services_extension = true

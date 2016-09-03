@@ -1,0 +1,16 @@
+# Build arguments go here. Examples:
+#   is_component_build = true
+#   is_debug = false
+# See "gn args <out_dir> --list" for available build arguments.
+is_debug = false
+# is_component_build = true
+remove_webcore_debug_symbols = true
+symbol_level = 0
+enable_nacl = false
+target_cpu = "x86"
+
+google_api_key = "AIzaSyBm8EjtiRPAZzYy7JCcp4RRTfKZyW8tBvU"
+google_default_client_id = "54907249506-q6ptqosca9avcmm50benumhgl7c84ok8.apps.googleusercontent.com"
+google_default_client_secret = "ZhKH_I3-MGSSnvkeOFcFvfg8"
+
+enable_hangout_services_extension = true
