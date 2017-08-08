@@ -472,16 +472,18 @@ SessionStartupPref StartupBrowserCreator::GetSessionStartupPref(
 
   // Thuan. If user has not sign-in, add sign-in page as default
   {
-    SigninManagerBase* signin = SigninManagerFactory::GetForProfile(profile);
-    bool is_signed_in = signin && signin->IsAuthenticated();
-	if(!is_signed_in)
-	{
-	  pref.type = SessionStartupPref::URLS;
-	  pref.urls.clear();
-	  std::string url_text = chrome::kChromeUIWelcomeURL;//chrome::kChromeUIChromeSigninURL;
-	  GURL fixed_url = url_formatter::FixupURL(url_text, std::string());
-	  pref.urls.push_back(fixed_url);
-	}
+    if(!is_first_run){
+      SigninManagerBase* signin = SigninManagerFactory::GetForProfile(profile);
+      bool is_signed_in = signin && signin->IsAuthenticated();
+      if(!is_signed_in)
+      {
+        pref.type = SessionStartupPref::URLS;
+        pref.urls.clear();
+        std::string url_text = chrome::kChromeUIWelcomeURL;//chrome::kChromeUIChromeSigninURL;
+        GURL fixed_url = url_formatter::FixupURL(url_text, std::string());
+        pref.urls.push_back(fixed_url);
+      }
+    }//End of not is_first_run
   }
   // Thuan end sign in default page.
 
