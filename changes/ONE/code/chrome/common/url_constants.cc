@@ -99,7 +99,7 @@ const char kChromeUIUberFrameURL[] = "chrome://uber-frame/";
 const char kChromeUIUserActionsURL[] = "chrome://user-actions/";
 const char kChromeUIVersionURL[] = "chrome://version/";
 const char kChromeUIWelcomeURL[] = "chrome://welcome/";
-const char kChromeUIWelcomeWin10URL[] = "chrome://welcome-win10/";
+const char kChromeUIWelcomeWin10URL[] = "chrome://welcome/";//"chrome://welcome-win10/";
 
 #if defined(OS_ANDROID)
 const char kChromeUIContextualSearchPromoURL[] =
