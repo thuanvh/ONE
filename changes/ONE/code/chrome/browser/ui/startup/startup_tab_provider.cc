@@ -108,7 +108,7 @@ StartupTabs StartupTabProviderImpl::GetWelcomeBackTabs(
   StartupTabs tabs;
   if (!process_startup || !browser_creator)
     return tabs;
-  switch (browser_creator->welcome_back_page()) {
+  /*switch (browser_creator->welcome_back_page()) {
     case StartupBrowserCreator::WelcomeBackPage::kNone:
       break;
 #if defined(OS_WIN)
@@ -124,7 +124,7 @@ StartupTabs StartupTabProviderImpl::GetWelcomeBackTabs(
       if (CanShowWelcome(profile->IsSyncAllowed(), profile->IsSupervised()))
         tabs.emplace_back(GetWelcomePageUrl(false), false);
       break;
-  }
+  }*/ // Thuan, Not show tab
   return tabs;
 }
 
