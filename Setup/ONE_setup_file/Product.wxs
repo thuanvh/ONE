@@ -2,7 +2,7 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
 	 xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension"
 	 xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
-	<Product Id="*" Name="ONE" Language="1033" Version="60.0.3112.78" Manufacturer="ONE Interpreting" UpgradeCode="90f859ab-1437-406f-823f-7d52276664fd">
+	<Product Id="*" Name="ONE" Language="1033" Version="63.0.3239.108" Manufacturer="ONE Interpreting" UpgradeCode="90f859ab-1437-406f-823f-7d52276664fd">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<!--<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />-->
@@ -112,138 +112,139 @@
 			<!-- TODO: Insert files, registry keys, and other resources here. -->
 			<!-- </Component> -->
 			<Component Id="Main_Prog" Guid="{63E14B85-4EF7-4722-9E93-1E0CB82BE7C8}" KeyPath="yes">
-				<!--<File Id="Test.exe" Source="d:\sandbox\utility\chromium\src\install\one60\Test.exe"  Checksum="yes">
+				<!--<File Id="Test.exe" Source="d:\sandbox\utility\chromium\src\install\one63\Test.exe"  Checksum="yes">
 				</File>-->
-				<File Id="ONE.bat" Source="d:\sandbox\utility\chromium\src\install\one60\chrome.exe" Checksum="yes"/>
+				<File Id="ONE.bat" Source="d:\sandbox\utility\chromium\src\install\one63\chrome.exe" Checksum="yes"/>
 			</Component>
 			<Component Id="DependFiles" Guid="{732E7E6A-8AE0-494B-9501-35CC40C299B6}" KeyPath="yes">
-        <!--<File Id="chrome.exe" Source="d:\sandbox\utility\chromium\src\install\one60\chrome.exe" Checksum="yes"/>-->
-        <File Id="master_preferences" Source="d:\sandbox\utility\chromium\src\install\one60\master_preferences" />
-				<File Id="First_Run" Source="d:\sandbox\utility\chromium\src\install\one60\First Run" />
-				<File Id="gyp_win_tool" Source="d:\sandbox\utility\chromium\src\install\one60\gyp-win-tool" />
-				<File Id="nacl_irt_x86_32.nexe.cmd" Source="d:\sandbox\utility\chromium\src\install\one60\nacl_irt_x86_32.nexe.cmd" />
-				<File Id="nacl_irt_x86_64.nexe.cmd" Source="d:\sandbox\utility\chromium\src\install\one60\nacl_irt_x86_64.nexe.cmd" />
-				<File Id="icudtl.dat" Source="d:\sandbox\utility\chromium\src\install\one60\icudtl.dat" />
-				<File Id="chrome.dll" Source="d:\sandbox\utility\chromium\src\install\one60\chrome.dll" />
-				<File Id="chrome_child.dll" Source="d:\sandbox\utility\chromium\src\install\one60\chrome_child.dll" />
-				<File Id="chrome_elf.dll" Source="d:\sandbox\utility\chromium\src\install\one60\chrome_elf.dll" />
-				<!--<File Id="d3dcompiler_46.dll" Source="d:\sandbox\utility\chromium\src\install\one60\d3dcompiler_46.dll" />-->
-				<File Id="d3dcompiler_47.dll" Source="d:\sandbox\utility\chromium\src\install\one60\d3dcompiler_47.dll" />
-				<File Id="ffmpegsumo.dll" Source="d:\sandbox\utility\chromium\src\install\one60\ffmpegsumo.dll" />
-				<File Id="libEGL.dll" Source="d:\sandbox\utility\chromium\src\install\one60\libEGL.dll" />
-				<File Id="libexif.dll" Source="d:\sandbox\utility\chromium\src\install\one60\libexif.dll" />
-				<File Id="libGLESv2.dll" Source="d:\sandbox\utility\chromium\src\install\one60\libGLESv2.dll" />
-				<File Id="metro_driver.dll" Source="d:\sandbox\utility\chromium\src\install\one60\metro_driver.dll" />
-				<!--<File Id="msvcp120.dll" Source="d:\sandbox\utility\chromium\src\install\one60\msvcp120.dll" />
-				<File Id="msvcr120.dll" Source="d:\sandbox\utility\chromium\src\install\one60\msvcr120.dll" />-->
-				<!--<File Id="pdf.dll" Source="d:\sandbox\utility\chromium\src\install\one60\pdf.dll" />-->
-				<!--<File Id="chrome.exe" Source="d:\sandbox\utility\chromium\src\install\one60\chrome.exe" />-->
-				<File Id="delegate_execute.exe" Source="d:\sandbox\utility\chromium\src\install\one60\delegate_execute.exe" />
-				<File Id="delegate_execute_unittests.exe" Source="d:\sandbox\utility\chromium\src\install\one60\delegate_execute_unittests.exe" />
-				<File Id="genmacro.exe" Source="d:\sandbox\utility\chromium\src\install\one60\genmacro.exe" />
-				<File Id="genmodule.exe" Source="d:\sandbox\utility\chromium\src\install\one60\genmodule.exe" />
-				<File Id="genperf.exe" Source="d:\sandbox\utility\chromium\src\install\one60\genperf.exe" />
-				<File Id="genstring.exe" Source="d:\sandbox\utility\chromium\src\install\one60\genstring.exe" />
-				<File Id="genversion.exe" Source="d:\sandbox\utility\chromium\src\install\one60\genversion.exe" />
-				<!--<File Id="libvpx_obj_int_extract.exe" Source="d:\sandbox\utility\chromium\src\install\one60\libvpx_obj_int_extract.exe" />-->
-				<File Id="mksnapshot.exe" Source="d:\sandbox\utility\chromium\src\install\one60\mksnapshot.exe" />
-				<File Id="nacl64.exe" Source="d:\sandbox\utility\chromium\src\install\one60\nacl64.exe" />
-				<File Id="protoc.exe" Source="d:\sandbox\utility\chromium\src\install\one60\protoc.exe" />
-				<File Id="re2c.exe" Source="d:\sandbox\utility\chromium\src\install\one60\re2c.exe" />
-				<File Id="tls_edit.exe" Source="d:\sandbox\utility\chromium\src\install\one60\tls_edit.exe" />
-				<File Id="wow_helper.exe" Source="d:\sandbox\utility\chromium\src\install\one60\wow_helper.exe" />
-				<File Id="yasm.exe" Source="d:\sandbox\utility\chromium\src\install\one60\yasm.exe" />
-				<!--<File Id="debug.log" Source="d:\sandbox\utility\chromium\src\install\one60\debug.log" />-->
-				<!--<File Id="_39.0.2171.71.manifest" Source="d:\sandbox\utility\chromium\src\install\one60\39.0.2171.71.manifest" />
-				<File Id="_39.0.2171.90.manifest" Source="d:\sandbox\utility\chromium\src\install\one60\39.0.2171.90.manifest" />-->
-        <!--<File Id="_42.0.2311.90.manifest" Source="d:\sandbox\utility\chromium\src\install\one60\42.0.2311.90.manifest" />-->
-        <!--<File Id="_42.0.2311.152.manifest" Source="d:\sandbox\utility\chromium\src\install\one60\42.0.2311.152.manifest" />-->
-        <!--<File Id="_48.0.2564.97.manifest" Source="d:\sandbox\utility\chromium\src\install\one60\48.0.2564.97.manifest" />-->
-        <!--<File Id="_52.0.2743.82.manifest" Source="d:\sandbox\utility\chromium\src\install\one60\52.0.2743.82.manifest" />-->
-        <!--<File Id="_55.0.2883.87.manifest" Source="d:\sandbox\utility\chromium\src\install\one60\55.0.2883.87.manifest" />-->
-        <File Id="_60.0.3112.78.manifest" Source="d:\sandbox\utility\chromium\src\install\one60\60.0.3112.78.manifest" />
-        <File Id="nacl_irt_x86_32.nexe" Source="d:\sandbox\utility\chromium\src\install\one60\nacl_irt_x86_32.nexe" />
-				<File Id="nacl_irt_x86_64.nexe" Source="d:\sandbox\utility\chromium\src\install\one60\nacl_irt_x86_64.nexe" />
-				<!--<File Id="build.ninja" Source="d:\sandbox\utility\chromium\src\install\one60\build.ninja" />-->
-				<File Id="chrome_100_percent.pak" Source="d:\sandbox\utility\chromium\src\install\one60\chrome_100_percent.pak" />
-				<File Id="chrome_200_percent.pak" Source="d:\sandbox\utility\chromium\src\install\one60\chrome_200_percent.pak" />
-				<File Id="content_resources.pak" Source="d:\sandbox\utility\chromium\src\install\one60\content_resources.pak" />
-				<File Id="keyboard_resources.pak" Source="d:\sandbox\utility\chromium\src\install\one60\keyboard_resources.pak" />
-				<File Id="resources.pak" Source="d:\sandbox\utility\chromium\src\install\one60\resources.pak" />
-        <File Id="chrome_watcher.dll" Source="d:\sandbox\utility\chromium\src\install\one60\chrome_watcher.dll" />
-        <File Id="natives_blob.bin" Source="d:\sandbox\utility\chromium\src\install\one60\natives_blob.bin" />
-        <File Id="snapshot_blob.bin" Source="d:\sandbox\utility\chromium\src\install\one60\snapshot_blob.bin" />        
+        <!--<File Id="chrome.exe" Source="d:\sandbox\utility\chromium\src\install\one63\chrome.exe" Checksum="yes"/>-->
+        <File Id="master_preferences" Source="d:\sandbox\utility\chromium\src\install\one63\master_preferences" />
+				<File Id="First_Run" Source="d:\sandbox\utility\chromium\src\install\one63\First Run" />
+				<File Id="gyp_win_tool" Source="d:\sandbox\utility\chromium\src\install\one63\gyp-win-tool" />
+				<File Id="nacl_irt_x86_32.nexe.cmd" Source="d:\sandbox\utility\chromium\src\install\one63\nacl_irt_x86_32.nexe.cmd" />
+				<File Id="nacl_irt_x86_64.nexe.cmd" Source="d:\sandbox\utility\chromium\src\install\one63\nacl_irt_x86_64.nexe.cmd" />
+				<File Id="icudtl.dat" Source="d:\sandbox\utility\chromium\src\install\one63\icudtl.dat" />
+				<File Id="chrome.dll" Source="d:\sandbox\utility\chromium\src\install\one63\chrome.dll" />
+				<File Id="chrome_child.dll" Source="d:\sandbox\utility\chromium\src\install\one63\chrome_child.dll" />
+				<File Id="chrome_elf.dll" Source="d:\sandbox\utility\chromium\src\install\one63\chrome_elf.dll" />
+				<!--<File Id="d3dcompiler_46.dll" Source="d:\sandbox\utility\chromium\src\install\one63\d3dcompiler_46.dll" />-->
+				<File Id="d3dcompiler_47.dll" Source="d:\sandbox\utility\chromium\src\install\one63\d3dcompiler_47.dll" />
+				<File Id="ffmpegsumo.dll" Source="d:\sandbox\utility\chromium\src\install\one63\ffmpegsumo.dll" />
+				<File Id="libEGL.dll" Source="d:\sandbox\utility\chromium\src\install\one63\libEGL.dll" />
+				<File Id="libexif.dll" Source="d:\sandbox\utility\chromium\src\install\one63\libexif.dll" />
+				<File Id="libGLESv2.dll" Source="d:\sandbox\utility\chromium\src\install\one63\libGLESv2.dll" />
+				<File Id="metro_driver.dll" Source="d:\sandbox\utility\chromium\src\install\one63\metro_driver.dll" />
+				<!--<File Id="msvcp120.dll" Source="d:\sandbox\utility\chromium\src\install\one63\msvcp120.dll" />
+				<File Id="msvcr120.dll" Source="d:\sandbox\utility\chromium\src\install\one63\msvcr120.dll" />-->
+				<!--<File Id="pdf.dll" Source="d:\sandbox\utility\chromium\src\install\one63\pdf.dll" />-->
+				<!--<File Id="chrome.exe" Source="d:\sandbox\utility\chromium\src\install\one63\chrome.exe" />-->
+				<File Id="delegate_execute.exe" Source="d:\sandbox\utility\chromium\src\install\one63\delegate_execute.exe" />
+				<File Id="delegate_execute_unittests.exe" Source="d:\sandbox\utility\chromium\src\install\one63\delegate_execute_unittests.exe" />
+				<File Id="genmacro.exe" Source="d:\sandbox\utility\chromium\src\install\one63\genmacro.exe" />
+				<File Id="genmodule.exe" Source="d:\sandbox\utility\chromium\src\install\one63\genmodule.exe" />
+				<File Id="genperf.exe" Source="d:\sandbox\utility\chromium\src\install\one63\genperf.exe" />
+				<File Id="genstring.exe" Source="d:\sandbox\utility\chromium\src\install\one63\genstring.exe" />
+				<File Id="genversion.exe" Source="d:\sandbox\utility\chromium\src\install\one63\genversion.exe" />
+				<!--<File Id="libvpx_obj_int_extract.exe" Source="d:\sandbox\utility\chromium\src\install\one63\libvpx_obj_int_extract.exe" />-->
+				<File Id="mksnapshot.exe" Source="d:\sandbox\utility\chromium\src\install\one63\mksnapshot.exe" />
+				<File Id="nacl64.exe" Source="d:\sandbox\utility\chromium\src\install\one63\nacl64.exe" />
+				<File Id="protoc.exe" Source="d:\sandbox\utility\chromium\src\install\one63\protoc.exe" />
+				<File Id="re2c.exe" Source="d:\sandbox\utility\chromium\src\install\one63\re2c.exe" />
+				<File Id="tls_edit.exe" Source="d:\sandbox\utility\chromium\src\install\one63\tls_edit.exe" />
+				<File Id="wow_helper.exe" Source="d:\sandbox\utility\chromium\src\install\one63\wow_helper.exe" />
+				<File Id="yasm.exe" Source="d:\sandbox\utility\chromium\src\install\one63\yasm.exe" />
+				<!--<File Id="debug.log" Source="d:\sandbox\utility\chromium\src\install\one63\debug.log" />-->
+				<!--<File Id="_39.0.2171.71.manifest" Source="d:\sandbox\utility\chromium\src\install\one63\39.0.2171.71.manifest" />
+				<File Id="_39.0.2171.90.manifest" Source="d:\sandbox\utility\chromium\src\install\one63\39.0.2171.90.manifest" />-->
+        <!--<File Id="_42.0.2311.90.manifest" Source="d:\sandbox\utility\chromium\src\install\one63\42.0.2311.90.manifest" />-->
+        <!--<File Id="_42.0.2311.152.manifest" Source="d:\sandbox\utility\chromium\src\install\one63\42.0.2311.152.manifest" />-->
+        <!--<File Id="_48.0.2564.97.manifest" Source="d:\sandbox\utility\chromium\src\install\one63\48.0.2564.97.manifest" />-->
+        <!--<File Id="_52.0.2743.82.manifest" Source="d:\sandbox\utility\chromium\src\install\one63\52.0.2743.82.manifest" />-->
+        <!--<File Id="_55.0.2883.87.manifest" Source="d:\sandbox\utility\chromium\src\install\one63\55.0.2883.87.manifest" />-->
+        <File Id="_63.0.3239.108.manifest" Source="d:\sandbox\utility\chromium\src\install\one63\63.0.3239.108.manifest" />
+        
+        <File Id="nacl_irt_x86_32.nexe" Source="d:\sandbox\utility\chromium\src\install\one63\nacl_irt_x86_32.nexe" />
+				<File Id="nacl_irt_x86_64.nexe" Source="d:\sandbox\utility\chromium\src\install\one63\nacl_irt_x86_64.nexe" />
+				<!--<File Id="build.ninja" Source="d:\sandbox\utility\chromium\src\install\one63\build.ninja" />-->
+				<File Id="chrome_100_percent.pak" Source="d:\sandbox\utility\chromium\src\install\one63\chrome_100_percent.pak" />
+				<File Id="chrome_200_percent.pak" Source="d:\sandbox\utility\chromium\src\install\one63\chrome_200_percent.pak" />
+				<File Id="content_resources.pak" Source="d:\sandbox\utility\chromium\src\install\one63\content_resources.pak" />
+				<File Id="keyboard_resources.pak" Source="d:\sandbox\utility\chromium\src\install\one63\keyboard_resources.pak" />
+				<File Id="resources.pak" Source="d:\sandbox\utility\chromium\src\install\one63\resources.pak" />
+        <File Id="chrome_watcher.dll" Source="d:\sandbox\utility\chromium\src\install\one63\chrome_watcher.dll" />
+        <File Id="natives_blob.bin" Source="d:\sandbox\utility\chromium\src\install\one63\natives_blob.bin" />
+        <File Id="snapshot_blob.bin" Source="d:\sandbox\utility\chromium\src\install\one63\snapshot_blob.bin" />        
 			</Component>			
 		</ComponentGroup>
 		<ComponentGroup Id="LocalesComponents" Directory="locales_dir">
 			<Component Id="locales_files" Guid="{A0317BE2-A9DF-479C-A40B-59CF84ED406F}">
-				<File Id="am.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\am.pak" />
-				<File Id="ar.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\ar.pak" />
-				<File Id="bg.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\bg.pak" />
-				<File Id="bn.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\bn.pak" />
-				<File Id="ca.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\ca.pak" />
-				<File Id="cs.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\cs.pak" />
-				<File Id="da.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\da.pak" />
-				<File Id="de.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\de.pak" />
-				<File Id="el.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\el.pak" />
-				<File Id="en_GB.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\en-GB.pak" />
-				<File Id="en_US.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\en-US.pak" />
-				<File Id="es.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\es.pak" />
-				<File Id="es_419.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\es-419.pak" />
-				<File Id="et.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\et.pak" />
-				<File Id="fa.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\fa.pak" />
-				<File Id="fi.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\fi.pak" />
-				<File Id="fil.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\fil.pak" />
-				<File Id="fr.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\fr.pak" />
-				<File Id="gu.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\gu.pak" />
-				<File Id="he.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\he.pak" />
-				<File Id="hi.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\hi.pak" />
-				<File Id="hr.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\hr.pak" />
-				<File Id="hu.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\hu.pak" />
-				<File Id="id.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\id.pak" />
-				<File Id="it.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\it.pak" />
-				<File Id="ja.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\ja.pak" />
-				<File Id="kn.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\kn.pak" />
-				<File Id="ko.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\ko.pak" />
-				<File Id="lt.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\lt.pak" />
-				<File Id="lv.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\lv.pak" />
-				<File Id="ml.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\ml.pak" />
-				<File Id="mr.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\mr.pak" />
-				<File Id="ms.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\ms.pak" />
-				<File Id="nb.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\nb.pak" />
-				<File Id="nl.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\nl.pak" />
-				<File Id="pl.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\pl.pak" />
-				<File Id="pt_BR.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\pt-BR.pak" />
-				<File Id="pt_PT.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\pt-PT.pak" />
-				<File Id="ro.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\ro.pak" />
-				<File Id="ru.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\ru.pak" />
-				<File Id="sk.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\sk.pak" />
-				<File Id="sl.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\sl.pak" />
-				<File Id="sr.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\sr.pak" />
-				<File Id="sv.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\sv.pak" />
-				<File Id="sw.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\sw.pak" />
-				<File Id="ta.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\ta.pak" />
-				<File Id="te.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\te.pak" />
-				<File Id="th.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\th.pak" />
-				<File Id="tr.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\tr.pak" />
-				<File Id="uk.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\uk.pak" />
-				<File Id="vi.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\vi.pak" />
-				<File Id="zh_CN.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\zh-CN.pak" />
-				<File Id="zh_TW.pak" Source="d:\sandbox\utility\chromium\src\install\one60\locales\zh-TW.pak" />
+				<File Id="am.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\am.pak" />
+				<File Id="ar.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\ar.pak" />
+				<File Id="bg.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\bg.pak" />
+				<File Id="bn.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\bn.pak" />
+				<File Id="ca.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\ca.pak" />
+				<File Id="cs.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\cs.pak" />
+				<File Id="da.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\da.pak" />
+				<File Id="de.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\de.pak" />
+				<File Id="el.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\el.pak" />
+				<File Id="en_GB.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\en-GB.pak" />
+				<File Id="en_US.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\en-US.pak" />
+				<File Id="es.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\es.pak" />
+				<File Id="es_419.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\es-419.pak" />
+				<File Id="et.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\et.pak" />
+				<File Id="fa.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\fa.pak" />
+				<File Id="fi.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\fi.pak" />
+				<File Id="fil.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\fil.pak" />
+				<File Id="fr.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\fr.pak" />
+				<File Id="gu.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\gu.pak" />
+				<File Id="he.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\he.pak" />
+				<File Id="hi.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\hi.pak" />
+				<File Id="hr.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\hr.pak" />
+				<File Id="hu.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\hu.pak" />
+				<File Id="id.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\id.pak" />
+				<File Id="it.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\it.pak" />
+				<File Id="ja.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\ja.pak" />
+				<File Id="kn.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\kn.pak" />
+				<File Id="ko.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\ko.pak" />
+				<File Id="lt.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\lt.pak" />
+				<File Id="lv.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\lv.pak" />
+				<File Id="ml.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\ml.pak" />
+				<File Id="mr.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\mr.pak" />
+				<File Id="ms.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\ms.pak" />
+				<File Id="nb.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\nb.pak" />
+				<File Id="nl.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\nl.pak" />
+				<File Id="pl.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\pl.pak" />
+				<File Id="pt_BR.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\pt-BR.pak" />
+				<File Id="pt_PT.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\pt-PT.pak" />
+				<File Id="ro.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\ro.pak" />
+				<File Id="ru.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\ru.pak" />
+				<File Id="sk.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\sk.pak" />
+				<File Id="sl.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\sl.pak" />
+				<File Id="sr.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\sr.pak" />
+				<File Id="sv.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\sv.pak" />
+				<File Id="sw.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\sw.pak" />
+				<File Id="ta.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\ta.pak" />
+				<File Id="te.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\te.pak" />
+				<File Id="th.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\th.pak" />
+				<File Id="tr.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\tr.pak" />
+				<File Id="uk.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\uk.pak" />
+				<File Id="vi.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\vi.pak" />
+				<File Id="zh_CN.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\zh-CN.pak" />
+				<File Id="zh_TW.pak" Source="d:\sandbox\utility\chromium\src\install\one63\locales\zh-TW.pak" />
 			</Component>
 		</ComponentGroup>
 		<ComponentGroup Id="ExtensionsComponents" Directory="extensions_dir">
 			<Component Id="extensions_files">
-				<File Id="external_extensions.json" Source="d:\sandbox\utility\chromium\src\install\one60\extensions\external_extensions.json"/>
+				<File Id="external_extensions.json" Source="d:\sandbox\utility\chromium\src\install\one63\extensions\external_extensions.json"/>
 			</Component>
 		</ComponentGroup>
     <ComponentGroup Id="PepperFlashComponents" Directory="PepperFlash_dir">
 			<Component Id="PepperFlash_files" Guid="{DED7BCF0-A3CB-4F7E-9FEB-B59DE8A1152E}">
-				<File Id="manifest.json" Source="d:\sandbox\utility\chromium\src\install\one60\PepperFlash\manifest.json"/>
-        <File Id="pepflashplayer.dll" Source="d:\sandbox\utility\chromium\src\install\one60\PepperFlash\pepflashplayer.dll"/>
+				<File Id="manifest.json" Source="d:\sandbox\utility\chromium\src\install\one63\PepperFlash\manifest.json"/>
+        <File Id="pepflashplayer.dll" Source="d:\sandbox\utility\chromium\src\install\one63\PepperFlash\pepflashplayer.dll"/>
 			</Component>
 		</ComponentGroup>
-		<Icon Id="app.ico" SourceFile="d:\sandbox\utility\chromium\src\install\one60\chromium.ico" />    
+		<Icon Id="app.ico" SourceFile="d:\sandbox\utility\chromium\src\install\one63\chromium.ico" />    
     <DirectoryRef Id="ApplicationProgramsFolder">
 			<Component Id="ApplicationShortcut" Guid="{5E63F11A-03F8-4C3C-8F0E-1B53172C4FB0}">
 				<Shortcut Id="ApplicationStartMenuShortcut"
