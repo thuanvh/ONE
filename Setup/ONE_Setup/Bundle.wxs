@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Bundle Name="ONE" Version="63.0.3239.108" Manufacturer="ONE Interpreting" UpgradeCode="c5c72238-ec02-4b7d-a2b8-88746956b776"
+	<Bundle Name="ONE" Version="67.0.3396.87" Manufacturer="ONE Interpreting" UpgradeCode="c5c72238-ec02-4b7d-a2b8-88746956b776"
           IconSourceFile='d:\sandbox\utility\chromium\src\install\one60\chromium.ico'>		
 		<!--<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />-->
 		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
