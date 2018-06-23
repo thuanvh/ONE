@@ -1,0 +1,2 @@
+D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_Setup\bin\Release\ONE_Setup.exe
+D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_Setup\bin\Release\ONE_Setup.wixpdb

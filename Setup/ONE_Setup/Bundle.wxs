@@ -6,7 +6,7 @@
 		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
 			<bal:WixStandardBootstrapperApplication
 			  LicenseUrl="" SuppressOptionsUI="yes" LogoFile="d:\sandbox\utility\chromium\src\install\one60\product_logo_64.png"
-			  xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" />
+			  xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" ShowVersion="yes" />
 		</BootstrapperApplicationRef>
 		<Chain>			
 			<!-- TODO: Define the list of chained packages. -->

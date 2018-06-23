@@ -1,0 +1,10 @@
+obj\Release\Product.wixobj
+D:\sandbox\utility\chromium\src\Setup1\ONE_setup_file\bin\Release\cab1.cab
+D:\sandbox\utility\chromium\src\Setup1\ONE_setup_file\bin\Release\ONE_setup_file.msi
+D:\sandbox\utility\chromium\src\Setup1\ONE_setup_file\bin\Release\ONE_setup_file.wixpdb
+D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\cab1.cab
+D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.wixpdb
+D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi
+obj\Release\ONE_setup_file.wixproj.BindContentsFileListnull.txt
+obj\Release\ONE_setup_file.wixproj.BindOutputsFileListnull.txt
+obj\Release\ONE_setup_file.wixproj.BindBuiltOutputsFileListnull.txt
