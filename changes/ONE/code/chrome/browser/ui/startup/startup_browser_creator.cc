@@ -66,20 +66,24 @@
 #include "content/public/browser/notification_source.h"
 #include "content/public/common/content_switches.h"
 #include "extensions/common/switches.h"
-#include "net/base/port_util.h"
 #include "printing/buildflags/buildflags.h"
 
 // Thuan include signin header
-#include "chrome/browser/signin/signin_manager_factory.h"
-#include "components/signin/core/browser/signin_manager_base.h"
+//#include "chrome/browser/signin/signin_manager_factory.h"
+//#include "components/signin/core/browser/signin_manager_base.h"
+#include "chrome/browser/signin/identity_manager_factory.h"
+#include "services/identity/public/cpp/identity_manager.h"
 // Thuan end include
 
 
 #if defined(OS_CHROMEOS)
+#include "ash/public/cpp/ash_features.h"
+#include "ash/public/cpp/ash_pref_names.h"
 #include "chrome/browser/chromeos/app_mode/app_launch_utils.h"
 #include "chrome/browser/chromeos/login/demo_mode/demo_app_launcher.h"
+#include "chrome/browser/chromeos/profiles/profile_helper.h"
 #include "chrome/browser/lifetime/application_lifetime.h"
-#include "chromeos/chromeos_switches.h"
+#include "chromeos/constants/chromeos_switches.h"
 #include "chromeos/cryptohome/cryptohome_parameters.h"
 #include "components/user_manager/user_manager.h"
 #else
@@ -99,6 +103,7 @@
 #include "chrome/browser/metrics/jumplist_metrics_win.h"
 #include "chrome/browser/notifications/win/notification_launch_id.h"
 #include "chrome/browser/ui/webui/settings/reset_settings_handler.h"
+#include "chrome/credential_provider/common/gcp_strings.h"
 #endif
 
 #if BUILDFLAG(ENABLE_PRINT_PREVIEW)
@@ -246,7 +251,8 @@ void DumpBrowserHistograms(const base::FilePath& output_file) {
   std::string output_string(
       base::StatisticsRecorder::ToJSON(base::JSON_VERBOSITY_LEVEL_FULL));
 
-  base::ScopedBlockingCall scoped_blocking_call(base::BlockingType::MAY_BLOCK);
+  base::ScopedBlockingCall scoped_blocking_call(FROM_HERE,
+                                                base::BlockingType::MAY_BLOCK);
   base::WriteFile(output_file, output_string.data(),
                   static_cast<int>(output_string.size()));
 }
@@ -280,6 +286,27 @@ void ShowUserManagerOnStartup(const base::CommandLine& command_line) {
   UserManager::Show(base::FilePath(),
                     profiles::USER_MANAGER_SELECT_PROFILE_NO_ACTION);
 #endif  // !defined(OS_CHROMEOS)
+}
+
+bool IsSilentLaunchEnabled(const base::CommandLine& command_line,
+                           const Profile* profile) {
+  // Note: This check should have been done in ProcessCmdLineImpl()
+  // before calling this function. However chromeos/login/login_utils.cc
+  // calls this function directly (see comments there) so it has to be checked
+  // again.
+  bool silent_launch = command_line.HasSwitch(switches::kSilentLaunch);
+
+#if defined(CHROMEOS)
+  DCHECK(!chromeos::ProfileHelper::IsSigninProfile(profile));
+  if (base::FeatureList::IsEnabled(ash::features::kKioskNextShell)) {
+    const PrefService* prefs = profile->GetPrefs();
+    if (prefs->GetBoolean(ash::prefs::kKioskNextShellEnabled)) {
+      silent_launch = true;
+    }
+  }
+#endif
+
+  return silent_launch;
 }
 
 }  // namespace
@@ -335,13 +362,13 @@ bool StartupBrowserCreator::LaunchBrowser(
                  << "browser session.";
   }
 
-  // Note: This check should have been done in ProcessCmdLineImpl()
-  // before calling this function. However chromeos/login/login_utils.cc
-  // calls this function directly (see comments there) so it has to be checked
-  // again.
-  const bool silent_launch = command_line.HasSwitch(switches::kSilentLaunch);
+#if defined(OS_WIN)
+  // Continue with the incognito profile if this is a credential provider logon.
+  if (command_line.HasSwitch(credential_provider::kGcpwSigninSwitch))
+    profile = profile->GetOffTheRecordProfile();
+#endif
 
-  if (!silent_launch) {
+  if (!IsSilentLaunchEnabled(command_line, profile)) {
     StartupBrowserCreatorImpl lwp(cur_dir, command_line, this, is_first_run);
     const std::vector<GURL> urls_to_launch =
         GetURLsFromCommandLine(command_line, cur_dir, profile);
@@ -443,8 +470,16 @@ SessionStartupPref StartupBrowserCreator::GetSessionStartupPref(
   // Thuan. If user has not sign-in, add sign-in page as default
   {
     if(!is_first_run){
-      SigninManagerBase* signin = SigninManagerFactory::GetForProfile(profile);
-      bool is_signed_in = signin && signin->IsAuthenticated();
+      //auto identity = IdentityManagerFactory::GetForProfile(profile);
+      bool is_signed_in = false;//identity && identity->GetPrimaryAccountManager() && identity->GetPrimaryAccountManager()->IsAuthenticated();
+      ProfileAttributesEntry* entry = nullptr;
+      bool has_entry =
+          g_browser_process->profile_manager()
+              ->GetProfileAttributesStorage()
+              .GetProfileAttributesWithPath(profile->GetPath(), &entry);
+
+      if (has_entry)// && entry->IsSigninRequired())
+        is_signed_in = entry->IsAuthenticated();
       if(!is_signed_in)
       {
         pref.type = SessionStartupPref::URLS;
@@ -486,15 +521,9 @@ void StartupBrowserCreator::RegisterProfilePrefs(PrefRegistrySimple* registry) {
   // creation.
   registry->RegisterBooleanPref(prefs::kHasSeenWelcomePage, true);
 #if defined(OS_WIN) && defined(GOOGLE_CHROME_BUILD)
-  // TODO(scottchen): To make this testable early by trybots, instead of hiding
-  // behind GOOGLE_CHROME_BUILD, use a function that returns true for official
-  // builds and conditionally returns true based on a command line switch to
-  // be set by tests.
-  registry->RegisterBooleanPref(prefs::kHasSeenGoogleAppsPromoPage, true);
-  registry->RegisterBooleanPref(prefs::kHasSeenEmailPromoPage, true);
-  // This  will be set to true for newly created profiles, and is used to
-  // indicate which users went through FRE after NUX is enabled.
-  registry->RegisterBooleanPref(prefs::kOnboardDuringNUX, false);
+  // This will be set for newly created profiles, and is used to indicate which
+  // users went through onboarding with the current experiment group.
+  registry->RegisterStringPref(prefs::kNaviOnboardGroup, "");
 #endif  // defined(OS_WIN) && defined(GOOGLE_CHROME_BUILD)
 }
 
@@ -609,12 +638,6 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
     silent_launch = true;
   }
 #endif  // BUILDFLAG(ENABLE_PRINT_PREVIEW)
-
-  if (command_line.HasSwitch(switches::kExplicitlyAllowedPorts)) {
-    std::string allowed_ports =
-        command_line.GetSwitchValueASCII(switches::kExplicitlyAllowedPorts);
-    net::SetExplicitlyAllowedPorts(allowed_ports);
-  }
 
   if (command_line.HasSwitch(switches::kValidateCrx)) {
     if (!process_startup) {
@@ -820,7 +843,7 @@ bool StartupBrowserCreator::ProcessLastOpenedProfiles(
   base::debug::Alias(&last_opened_profiles);
   const Profile* DEBUG_profile_0 = nullptr;
   const Profile* DEBUG_profile_1 = nullptr;
-  if (last_opened_profiles.size() > 0)
+  if (!last_opened_profiles.empty())
     DEBUG_profile_0 = last_opened_profiles[0];
   if (last_opened_profiles.size() > 1)
     DEBUG_profile_1 = last_opened_profiles[1];

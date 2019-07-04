@@ -1,3 +1,4 @@
-D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\cab1.cab
-D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi
-D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.wixpdb
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\cab2.cab
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\cab1.cab
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.wixpdb

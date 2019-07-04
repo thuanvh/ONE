@@ -8,3 +8,9 @@ D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_set
 obj\Release\ONE_setup_file.wixproj.BindContentsFileListnull.txt
 obj\Release\ONE_setup_file.wixproj.BindOutputsFileListnull.txt
 obj\Release\ONE_setup_file.wixproj.BindBuiltOutputsFileListnull.txt
+D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\cab2.cab
+obj\Release\source.wixobj
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\cab2.cab
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\cab1.cab
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.wixpdb

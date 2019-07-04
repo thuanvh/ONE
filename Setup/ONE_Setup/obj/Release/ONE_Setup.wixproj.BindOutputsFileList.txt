@@ -1,2 +1,2 @@
-D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_Setup\bin\Release\ONE_Setup.exe
-D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_Setup\bin\Release\ONE_Setup.wixpdb
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_Setup\bin\Release\ONE_Setup.exe
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_Setup\bin\Release\ONE_Setup.wixpdb

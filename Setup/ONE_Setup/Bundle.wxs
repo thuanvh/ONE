@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Bundle Name="ONE" Version="71.0.3578.98" Manufacturer="ONE Interpreting" UpgradeCode="c5c72238-ec02-4b7d-a2b8-88746956b776"
-          IconSourceFile='d:\sandbox\utility\chromium\src\install\one60\chromium.ico'>		
+	<Bundle Name="ONE" Version="75.0.3770.100" Manufacturer="ONE Interpreting" UpgradeCode="c5c72238-ec02-4b7d-a2b8-88746956b776"
+          IconSourceFile='O:\sandbox\utility\chromium\src\install\one60\chromium.ico'>		
 		<!--<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />-->
 		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
 			<bal:WixStandardBootstrapperApplication
-			  LicenseUrl="" SuppressOptionsUI="yes" LogoFile="d:\sandbox\utility\chromium\src\install\one60\product_logo_64.png"
+			  LicenseUrl="" SuppressOptionsUI="yes" LogoFile="O:\sandbox\utility\chromium\src\install\one60\product_logo_64.png"
 			  xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" ShowVersion="yes" />
 		</BootstrapperApplicationRef>
 		<Chain>			
 			<!-- TODO: Define the list of chained packages. -->
 			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
-			<ExePackage Id="vcredist_x86" Name="Visual C++ Redistribution Setup" Cache="no" Compressed="yes" PerMachine="yes" Permanent="yes" Vital="yes"
+			<!--<ExePackage Id="vcredist_x86" Name="Visual C++ Redistribution Setup" Cache="no" Compressed="yes" PerMachine="yes" Permanent="yes" Vital="yes"
 							InstallCommand="/q"
 				  SourceFile="vc_redist.x86.exe"
 				  />
 
-			<RollbackBoundary />
+			<RollbackBoundary />-->
 
-			<MsiPackage Id="MainPackage" SourceFile="D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi" 
+			<MsiPackage Id="MainPackage" SourceFile="O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi" 
                   DisplayInternalUI="yes" Compressed="yes" Vital="yes" />
 		</Chain>
 	</Bundle>

@@ -6,3 +6,5 @@ obj\Release\ONE_Setup.wixproj.BindOutputsFileList.txt
 obj\Release\ONE_Setup.wixproj.BindBuiltOutputsFileList.txt
 D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_Setup\bin\Release\ONE_Setup.exe
 D:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_Setup\bin\Release\ONE_Setup.wixpdb
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_Setup\bin\Release\ONE_Setup.exe
+O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_Setup\bin\Release\ONE_Setup.wixpdb
