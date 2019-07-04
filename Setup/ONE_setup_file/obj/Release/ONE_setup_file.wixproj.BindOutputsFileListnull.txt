@@ -1,4 +1,0 @@
-O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\cab2.cab
-O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\cab1.cab
-O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi
-O:\sandbox\utility\chromium\src\git\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.wixpdb
