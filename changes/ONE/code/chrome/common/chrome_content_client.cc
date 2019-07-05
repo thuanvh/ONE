@@ -237,7 +237,7 @@ bool GetCommandLinePepperFlash(content::PepperPluginInfo* plugin) {
 	#if defined(OS_POSIX)
 	std::string flash_path_str = "";
   if (flash_path.empty())
-	flash_path_str = "PepperFlash\\pepflashplayer.dll";//std::string("PepperFlash\\pepflashplayer.dll");
+	flash_path_str = "PepperFlash\\PepperFlashPlayer.plugin";//std::string("PepperFlash\\pepflashplayer.dll");
 #elif defined(OS_WIN)	
   std::wstring flash_path_str = L"";
   if (flash_path.empty())
