@@ -7,8 +7,14 @@
     </Fragment>
     <Fragment>
         <ComponentGroup Id="SourceComponentGroup">
-            <Component Id="cmp2580E09266C46CB3DEC0416D18B926D0" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil037FA316047B2FE846EFDEF009CB8557" KeyPath="yes" Source="$(var.SourcePath)\75.0.3770.100.manifest" />
+            <Component Id="cmpA5A48A46A2F639573595F216B3BF5539" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
+                <File Id="fil18CC4D52F4B4E4815D5AB29704126B70" KeyPath="yes" Source="$(var.SourcePath)\.ninja_deps" />
+            </Component>
+            <Component Id="cmp1582893408C2EFF36F44C7D8D04992BB" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
+                <File Id="fil1B78653F1147EAF3ACA8093E6558999C" KeyPath="yes" Source="$(var.SourcePath)\.ninja_log" />
+            </Component>
+            <Component Id="cmp8C8A7D6A8B2E517EA810DCAC79F53A9B" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
+                <File Id="filAA6BC27EB693BA6A61596A6137DE3B04" KeyPath="yes" Source="$(var.SourcePath)\80.0.3987.116.manifest" />
             </Component>
             <Component Id="cmp0C464C2CBE3556521159619B6B6EF9F4" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filCDFC34E0484E367543E1853C522C173E" KeyPath="yes" Source="$(var.SourcePath)\api-ms-win-core-console-l1-1-0.dll" />
@@ -136,6 +142,9 @@
             <Component Id="cmp50621FBBF15AFF3D0C0BC6D38DF8F019" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filE3A6F0D4567E55920C830EF05CEA9B59" KeyPath="yes" Source="$(var.SourcePath)\api-ms-win-crt-utility-l1-1-0.dll" />
             </Component>
+            <Component Id="cmp71FFC9B87E44305DBA8A67C8373C9564" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
+                <File Id="fil61FEA5A7F0AA0536551EF1CF26E745FC" KeyPath="yes" Source="$(var.SourcePath)\build.ninja.d" />
+            </Component>
             <Component Id="cmp49994151639D8C01C920430B6CE73013" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filF7F31CC23046A0D48E1C79B08CD53A21" KeyPath="yes" Source="$(var.SourcePath)\chrome.dll" />
             </Component>
@@ -148,23 +157,11 @@
             <Component Id="cmp83A0728B760DB2B72E24A9FA355BBF35" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filED93FD869FFE0D350CDC2FC643D05D98" KeyPath="yes" Source="$(var.SourcePath)\chrome_100_percent.pak" />
             </Component>
-            <Component Id="cmpB4AD3C922E68344E18385DB93007396C" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="filFC989C3D79EBC4F0EDF3AF62060F9FFD" KeyPath="yes" Source="$(var.SourcePath)\chrome_100_percent.pak.info" />
-            </Component>
             <Component Id="cmpB54AD1667EDEB2871DA326C89AE8C766" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="fil5114582B44450F9917F7062FCB00C129" KeyPath="yes" Source="$(var.SourcePath)\chrome_200_percent.pak" />
             </Component>
-            <Component Id="cmp13444D533DA78E3E5C07C8D526447FFE" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="filEDDE723522B265727D05583436B5826E" KeyPath="yes" Source="$(var.SourcePath)\chrome_200_percent.pak.info" />
-            </Component>
-            <Component Id="cmp31DDC6A7EB9B457EFF4354FCB62C656D" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil256F8D45E26F2E062B991C66D97F9888" KeyPath="yes" Source="$(var.SourcePath)\chrome_child.dll" />
-            </Component>
             <Component Id="cmp064105B85E19CC1B5B5B4893D0326C2B" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filFA901AB827ABAFCA7FB863048B7B7BC6" KeyPath="yes" Source="$(var.SourcePath)\chrome_elf.dll" />
-            </Component>
-            <Component Id="cmp84118E2E832289784B80C62546C3BA23" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil4B65A5D2E7E29A7EC3C01771ECBEBB46" KeyPath="yes" Source="$(var.SourcePath)\chrome_proxy.exe" />
             </Component>
             <Component Id="cmp5555B6B53BE35DACB90F74FDC5BAFD21" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="fil2DBCDAB9317F4C86D8AB650C60018B2B" KeyPath="yes" Source="$(var.SourcePath)\chrome_watcher.dll" />
@@ -193,9 +190,6 @@
             <Component Id="cmp09E76BF9C8A8632718C633125A4FED96" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="fil1546E84C08E171515FDB0CEE597BD44B" KeyPath="yes" Source="$(var.SourcePath)\headless_lib.pak" />
             </Component>
-            <Component Id="cmpC912F48A94964CE00CE40DEAACD70D83" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="filAF07B27E13276BB5D9FC9D80A5051EF1" KeyPath="yes" Source="$(var.SourcePath)\headless_lib.pak.info" />
-            </Component>
             <Component Id="cmpC1BD7116C876A84EA65D3532202DE73D" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="fil15734E1A62D569FEFBEA9472C60AC682" KeyPath="yes" Source="$(var.SourcePath)\icudtl.dat" />
             </Component>
@@ -214,17 +208,8 @@
             <Component Id="cmp76B6421FD49F58DDED133C3B315DE9DA" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filDD86C32F4B00A6CA7E33B1389938424E" KeyPath="yes" Source="$(var.SourcePath)\msvcp140.dll" />
             </Component>
-            <Component Id="cmpDA44F73E51051243470C52D4DADB0596" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="filB725A40C3CEF292D4E66FBAF1034014E" KeyPath="yes" Source="$(var.SourcePath)\natives_blob.bin" />
-            </Component>
-            <Component Id="cmpA6C6DA267DBB9AB4999AF39F8C02D91E" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil817DCDBA3F9C6B82459151F84C68428C" KeyPath="yes" Source="$(var.SourcePath)\pgort140.dll" />
-            </Component>
             <Component Id="cmp9E0AEBE97FEB21B0AF23482C4C7BB699" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="fil17B2B001E26B3836B018A773EFCF9FC7" KeyPath="yes" Source="$(var.SourcePath)\resources.pak" />
-            </Component>
-            <Component Id="cmpFC7C901DADF254A39034036EFA538940" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="filB7C96804EB40C093BDF188F1CC2425EC" KeyPath="yes" Source="$(var.SourcePath)\resources.pak.info" />
             </Component>
             <Component Id="cmp83DBED10F44C302C1036978DDBB2324B" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="fil893F662C1D60E8EA2AE71B11C977224A" KeyPath="yes" Source="$(var.SourcePath)\SmallLogo.png" />
@@ -235,9 +220,6 @@
             <Component Id="cmpCEB7B0403B2971C307A1CD77BA66EA44" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="fil0C0492EFE5982DBB38C9767887D60BC0" KeyPath="yes" Source="$(var.SourcePath)\ucrtbase.dll" />
             </Component>
-            <Component Id="cmp115D809CC58882C56720197F91AD4147" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil35F5D69507EC4AEBF11162E7C96EE642" KeyPath="yes" Source="$(var.SourcePath)\v8_build_config.json" />
-            </Component>
             <Component Id="cmp2EE1E9794AE734C3E61CB0A910DB84B0" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filF3A0AC58198114489B41D69F48766786" KeyPath="yes" Source="$(var.SourcePath)\v8_context_snapshot.bin" />
             </Component>
@@ -247,29 +229,14 @@
             <Component Id="cmpB386FDC83B59CC2DBEE952EC6E79EF4C" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filBA7D6EB5BBEA2FE297E29D3CC482227C" KeyPath="yes" Source="$(var.SourcePath)\vcruntime140.dll" />
             </Component>
-            <Component Id="cmp0D4CD1DC012AF0EEA2F13F41888D30BE" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="filFAF4D789F390D740DE5322533CC0BB10" KeyPath="yes" Source="$(var.SourcePath)\views_mus_resources.pak" />
-            </Component>
-            <Component Id="cmp1CF3E5A28393EE729E508010D3C53CE2" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil39D243F9080655DA1D8C4782F1361ED7" KeyPath="yes" Source="$(var.SourcePath)\views_mus_resources.pak.info" />
-            </Component>
             <Component Id="cmp99A9994BD1067F6124D4C22D99576134" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="fil7A5A08B0E7B25ED4C662B20088CBD14A" KeyPath="yes" Source="$(var.SourcePath)\VkICD_mock_icd.dll" />
             </Component>
-            <Component Id="cmpF68EC834E339D68234E6C45B3A01D984" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="filBC3D7F88FD2483A4280095AE644469C7" KeyPath="yes" Source="$(var.SourcePath)\VkLayer_core_validation.dll" />
+            <Component Id="cmpF36695D06778FB675D59426D0ED0691F" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
+                <File Id="filAF29988ABB6E20614B4CC34A5A18478B" KeyPath="yes" Source="$(var.SourcePath)\vk_swiftshader.dll" />
             </Component>
-            <Component Id="cmp5FDDDFFE8BDE94B9DD28512A54FFD282" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil3596601137E0C87FD92E8180BD4BB4D2" KeyPath="yes" Source="$(var.SourcePath)\VkLayer_object_lifetimes.dll" />
-            </Component>
-            <Component Id="cmp71F11A7DFC3369C0596424A780462BE0" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil34916A47C97B6E97E652555720AC8612" KeyPath="yes" Source="$(var.SourcePath)\VkLayer_stateless_validation.dll" />
-            </Component>
-            <Component Id="cmp1C4F1C35CBC0E0C17A29970AEE907BD1" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil99F9DB564E1105C58A5C985A4EA453EA" KeyPath="yes" Source="$(var.SourcePath)\VkLayer_thread_safety.dll" />
-            </Component>
-            <Component Id="cmpB96756CA6946A63AD69270B4EA71184E" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil8BD1EF23A4A1D228EFF2840AE8FC695B" KeyPath="yes" Source="$(var.SourcePath)\VkLayer_unique_objects.dll" />
+            <Component Id="cmpD5BABCC3D1B7C31BF3A7DDAC225EE48C" Directory="dir470B19723E3CBC4050B73C876B03D48D" Guid="*">
+                <File Id="filB5DBF9995368338DB77315F4CBDF4601" KeyPath="yes" Source="$(var.SourcePath)\Dictionaries\en-US-8-0.bdic" />
             </Component>
             <Component Id="cmpC5F03E8C32F6536DCB9121C642AC5B2D" Directory="dir89A170EFAD3814B487C92D8EAB90DE31" Guid="*">
                 <File Id="fil93E4B3EC684139951F0BA421989475CA" KeyPath="yes" Source="$(var.SourcePath)\locales\am.pak" />
@@ -599,6 +566,11 @@
                 <File Id="fil1488DA9604EF68D1F420A35450B7EA29" KeyPath="yes" Source="$(var.SourcePath)\PepperFlash\pepflashplayer.dll" />
             </Component>
         </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirEF46C7404B50F3071431995F0F04741E">
+            <Directory Id="dir470B19723E3CBC4050B73C876B03D48D" Name="Dictionaries" />
+        </DirectoryRef>
     </Fragment>
     <Fragment>
         <DirectoryRef Id="dirEF46C7404B50F3071431995F0F04741E">

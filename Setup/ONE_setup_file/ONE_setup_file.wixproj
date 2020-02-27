@@ -19,7 +19,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>SourcePath=O:\sandbox\utility\chromium\src\install\one75_x86\bin</DefineConstants>
+    <DefineConstants>SourcePath=D:\sandbox\chromium\install\one80_x86\bin\</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Product.wxs" />
@@ -41,7 +41,7 @@
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <PropertyGroup>
-    <PreBuildEvent>"%25WIX%25\bin\heat.exe" dir "O:\sandbox\utility\chromium\src\install\one75_x86\bin" -dr INSTALLFOLDER -cg SourceComponentGroup -var var.SourcePath -ag -out "$(ProjectDir)\source.wxs"</PreBuildEvent>
+    <PreBuildEvent>"%25WIX%25\bin\heat.exe" dir "D:\sandbox\chromium\install\one80_x86\bin" -dr INSTALLFOLDER -cg SourceComponentGroup -var var.SourcePath -ag -out "$(ProjectDir)\source.wxs"</PreBuildEvent>
   </PropertyGroup>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
