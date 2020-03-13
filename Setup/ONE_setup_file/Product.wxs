@@ -2,7 +2,7 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
 	 xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension"
 	 xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
-	<Product Id="*" Name="ONE" Language="1033" Version="80.0.3987.116" Manufacturer="ONE Interpreting" UpgradeCode="90f859ab-1437-406f-823f-7d52276664fd">
+	<Product Id="*" Name="ONE" Language="1033" Version="80.0.3987.132" Manufacturer="ONE Interpreting" UpgradeCode="90f859ab-1437-406f-823f-7d52276664fd">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<!--<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />-->

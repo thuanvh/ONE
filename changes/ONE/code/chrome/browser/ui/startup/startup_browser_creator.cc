@@ -481,37 +481,37 @@ SessionStartupPref StartupBrowserCreator::GetSessionStartupPref(
   }
 
   // Thuan. If user has not sign-in, add sign-in page as default
-  {
-    if(!is_first_run){
-      //auto identity = IdentityManagerFactory::GetForProfile(profile);
-      bool is_signed_in = false;//identity && identity->GetPrimaryAccountManager() && identity->GetPrimaryAccountManager()->IsAuthenticated();
-      ProfileAttributesEntry* entry = nullptr;
-      bool has_entry =
-          g_browser_process->profile_manager()
-              ->GetProfileAttributesStorage()
-              .GetProfileAttributesWithPath(profile->GetPath(), &entry);
+  //{
+  //  if(!is_first_run){
+  //    //auto identity = IdentityManagerFactory::GetForProfile(profile);
+  //    bool is_signed_in = false;//identity && identity->GetPrimaryAccountManager() && identity->GetPrimaryAccountManager()->IsAuthenticated();
+  //    ProfileAttributesEntry* entry = nullptr;
+  //    bool has_entry =
+  //        g_browser_process->profile_manager()
+  //            ->GetProfileAttributesStorage()
+  //            .GetProfileAttributesWithPath(profile->GetPath(), &entry);
 
-      if (has_entry)// && entry->IsSigninRequired())
-        is_signed_in = entry->IsAuthenticated();
-      if(!is_signed_in)
-      {
-        pref.type = SessionStartupPref::URLS;
-        pref.urls.clear();
-        
-        //std::string url_text = chrome::kChromeUIChromeSigninURL; //chrome::kChromeUIWelcomeURL;
-        //GURL fixed_url = url_formatter::FixupURL(url_text, std::string());
-        GURL fixed_url = signin::GetChromeSyncURLForDice("","");
+  //    if (has_entry)// && entry->IsSigninRequired())
+  //      is_signed_in = entry->IsAuthenticated();
+  //    if(!is_signed_in)
+  //    {
+  //      pref.type = SessionStartupPref::URLS;
+  //      pref.urls.clear();
+  //      
+  //      //std::string url_text = chrome::kChromeUIChromeSigninURL; //chrome::kChromeUIWelcomeURL;
+  //      //GURL fixed_url = url_formatter::FixupURL(url_text, std::string());
+  //      GURL fixed_url = signin::GetChromeSyncURLForDice("","");
 
-        /*GURL fixed_url = signin::GetEmbeddedPromoURL(signin_metrics::AccessPoint::ACCESS_POINT_START_PAGE,
-                          signin_metrics::Reason::REASON_SIGNIN_PRIMARY_ACCOUNT,
-                          false);*/
-        pref.urls.push_back(fixed_url);
-        //g_browser_process->signin_view_controller()->ShowSignin(
-        //    profiles::BUBBLE_VIEW_MODE_GAIA_SIGNIN, g_browser_process,
-        //    signin_metrics::AccessPoint::ACCESS_POINT_START_PAGE);
-      }
-    }//End of not is_first_run
-  }
+  //      /*GURL fixed_url = signin::GetEmbeddedPromoURL(signin_metrics::AccessPoint::ACCESS_POINT_START_PAGE,
+  //                        signin_metrics::Reason::REASON_SIGNIN_PRIMARY_ACCOUNT,
+  //                        false);*/
+  //      pref.urls.push_back(fixed_url);
+  //      //g_browser_process->signin_view_controller()->ShowSignin(
+  //      //    profiles::BUBBLE_VIEW_MODE_GAIA_SIGNIN, g_browser_process,
+  //      //    signin_metrics::AccessPoint::ACCESS_POINT_START_PAGE);
+  //    }
+  //  }//End of not is_first_run
+  //}
   // Thuan end sign in default page.
 
   return pref;

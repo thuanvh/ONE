@@ -16,6 +16,9 @@
             <Component Id="cmp8C8A7D6A8B2E517EA810DCAC79F53A9B" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filAA6BC27EB693BA6A61596A6137DE3B04" KeyPath="yes" Source="$(var.SourcePath)\80.0.3987.116.manifest" />
             </Component>
+            <Component Id="cmp638E8F95A17A0AE6373F6970971103DB" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
+                <File Id="filA478A65B44DECD5EF71981722EA2C044" KeyPath="yes" Source="$(var.SourcePath)\80.0.3987.132.manifest" />
+            </Component>
             <Component Id="cmp0C464C2CBE3556521159619B6B6EF9F4" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filCDFC34E0484E367543E1853C522C173E" KeyPath="yes" Source="$(var.SourcePath)\api-ms-win-core-console-l1-1-0.dll" />
             </Component>
