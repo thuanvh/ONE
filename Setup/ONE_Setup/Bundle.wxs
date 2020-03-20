@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Bundle Name="ONE" Version="80.0.3987.132" Manufacturer="ONE Interpreting" UpgradeCode="c5c72238-ec02-4b7d-a2b8-88746956b776"
-          IconSourceFile='D:\sandbox\chromium\install\one80_x86\bin\chromium.ico'>		
+          IconSourceFile='..\..\..\install\one80_x86\bin\chromium.ico'>		
 		<!--<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />-->
 		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
 			<bal:WixStandardBootstrapperApplication
-			  LicenseUrl="" SuppressOptionsUI="yes" LogoFile="D:\sandbox\chromium\install\product_logo_64.png"
+			  LicenseUrl="" SuppressOptionsUI="yes" LogoFile="..\..\..\install\product_logo_64.png"
 			  xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" ShowVersion="yes" />
 		</BootstrapperApplicationRef>
 		<Chain>			
@@ -18,7 +18,7 @@
 
 			<RollbackBoundary />-->
 
-			<MsiPackage Id="MainPackage" SourceFile="D:\sandbox\chromium\ONE\Setup\ONE_setup_file\bin\Release\ONE_setup_file.msi" 
+			<MsiPackage Id="MainPackage" SourceFile="..\ONE_setup_file\bin\Release\ONE_setup_file.msi" 
                   DisplayInternalUI="yes" Compressed="yes" Vital="yes" />
 		</Chain>
 	</Bundle>
