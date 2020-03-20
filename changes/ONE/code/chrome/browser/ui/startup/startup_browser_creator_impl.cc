@@ -99,6 +99,8 @@
 #include "chrome/browser/profiles/profile_attributes_entry.h"
 #include "chrome/browser/profiles/profile_attributes_storage.h"
 #include "chrome/browser/profiles/profile_manager.h"
+#include "base/feature_list.h"
+#include "media/base/media_switches.h"
 // Thuan
 
 namespace {
@@ -699,6 +701,17 @@ void StartupBrowserCreatorImpl::DetermineURLsAndLaunch(
           profiles::BUBBLE_VIEW_MODE_GAIA_SIGNIN, browser,
           signin_metrics::AccessPoint::ACCESS_POINT_AVATAR_BUBBLE_SIGN_IN);
     }
+  }
+  {
+    // Disable some feature
+    // base::FeatureList::GetInstance()->InitializeFromCommandLine("",
+    //  media::kGlobalMediaControls.name
+    // // "global-media-controls"
+    //  );
+
+    //base::FeatureList::GetInstance()->RegisterOverrides(media::kGlobalMediaControls.name,
+    //base::FeatureList::OverrideState::OVERRIDE_DISABLE_FEATURE,
+    //nullptr);
   }
   // Thuan
 }
