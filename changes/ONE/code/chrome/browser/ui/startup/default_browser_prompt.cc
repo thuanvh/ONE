@@ -143,8 +143,11 @@ void RegisterDefaultBrowserPromptPrefs(PrefRegistrySimple* registry) {
 void ShowDefaultBrowserPrompt(Profile* profile) {
   
   //profile->GetPrefs()->SetBoolean(prefs::kCheckDefaultBrowser, false);  //Thuan
+  int a = 0;
+  if(a == 0)
   return; //Thuan. Not show default browser prompt.
-
+  // Thuan. Comment all
+  
   // Do not check if Chrome is the default browser if there is a policy in
   // control of this setting.
   if (g_browser_process->local_state()->IsManagedPreference(
@@ -166,6 +169,7 @@ void ShowDefaultBrowserPrompt(Profile* profile) {
           base::Bind(&OnCheckIsDefaultBrowserFinished, profile->GetPath(),
                      ShouldShowDefaultBrowserPrompt(profile))))
       ->StartCheckIsDefault();
+   // Thuan.Comment all
 }
 
 void DefaultBrowserPromptDeclined(Profile* profile) {
