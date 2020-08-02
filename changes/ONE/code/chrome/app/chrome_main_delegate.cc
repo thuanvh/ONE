@@ -552,12 +552,11 @@ void ChromeMainDelegate::PostEarlyInitialization(bool is_running_tests) {
   // Add GlobalMediaControls to disable 
   base::CommandLine* cmd = base::CommandLine::ForCurrentProcess();
 #if defined(OS_WIN)
-  auto param = base::UTF8ToWide(media::kGlobalMediaControls.name);
+  base::CommandLine::StringType param(base::UTF8ToWide(media::kGlobalMediaControls.name));
 #else
-  auto param = media::kGlobalMediaControls.name;
+  base::CommandLine::StringType param(media::kGlobalMediaControls.name);
 #endif
-  cmd->AppendSwitchNative(switches::kDisableFeatures, 
-    base::CommandLine::StringType(param));
+  cmd->AppendSwitchNative(switches::kDisableFeatures, param);
 
 
   DCHECK(startup_data_);
