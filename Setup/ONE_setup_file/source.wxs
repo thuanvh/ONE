@@ -7,8 +7,8 @@
     </Fragment>
     <Fragment>
         <ComponentGroup Id="SourceComponentGroup">
-            <Component Id="cmp0C6B484629AFBF0D1E8ACEBEADA71067" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
-                <File Id="fil68F3E788131A9B5332782DC77D96AE89" KeyPath="yes" Source="$(var.SourcePath)\84.0.4147.105.manifest" />
+            <Component Id="cmp8FB8B2DCF2A90485D2C6C60BB04DFBDE" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
+                <File Id="fil194B12A356B5557D03B2BEA17C5D2D0C" KeyPath="yes" Source="$(var.SourcePath)\87.0.4280.88.manifest" />
             </Component>
             <Component Id="cmp49994151639D8C01C920430B6CE73013" Directory="dirEF46C7404B50F3071431995F0F04741E" Guid="*">
                 <File Id="filF7F31CC23046A0D48E1C79B08CD53A21" KeyPath="yes" Source="$(var.SourcePath)\chrome.dll" />
